@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_3) (preloaded format=platex 2018.4.10)  19 NOV 2018 18:28
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_3) (preloaded format=platex 2018.4.10)  26 NOV 2018 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -202,30 +202,46 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 第 2 章
 [4
 
-] [5] [6] [7] [8]
-第 3 章
-[9
-
 ]
-第 4 章
+Overfull \hbox (3.42854pt too wide) in paragraph at lines 121--129
+[]\JY1/mc/m/n/12 有向もしくは無向グラフをグラフ $\OML/cmm/m/it/12 G \OT1/cmr/m/
+n/12 = (\OML/cmm/m/it/12 V; E\OT1/cmr/m/n/12 )$ \JY1/mc/m/n/12 と表す． グラフ
+は頂点集合 $\OML/cmm/m/it/12 V \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/i
+t/12 v[]; [] ; v[]\OMS/cmsy/m/n/12 g$\JY1/mc/m/n/12 ，
+ []
+
+[5] [6] [7] [8] [9]
+第 3 章
+
+Overfull \hbox (15.38214pt too wide) in paragraph at lines 379--383
+[]\JY1/mc/m/n/12 始点が $\OML/cmm/m/it/12 v$\JY1/mc/m/n/12 ， 終点が $\OML/cmm/
+m/it/12 !$ \JY1/mc/m/n/12 である辺 $\OML/cmm/m/it/12 e$ \JY1/mc/m/n/12 の重みベ
+クトルを $[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 e[]; [] ; e[]\OT1/cmr/m/n/12 )
+$
+ []
+
 [10
+
+] [11]
+第 4 章
+[12
 
 ]
 第 5 章
-[11
+[13
 
-] [12
+] [14
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 335.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 442.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 335.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 442.
 
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
 
 
-[13] (./thesis_nakano.aux) ) 
+[15] (./thesis_nakano.aux) ) 
 Here is how much of TeX's memory you used:
  1482 strings out of 493653
  17551 string characters out of 6150338
@@ -235,4 +251,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  27i,15n,24p,236b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis_nakano.dvi (14 pages, 27400 bytes).
+Output written on thesis_nakano.dvi (16 pages, 36760 bytes).

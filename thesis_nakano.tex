@@ -104,17 +104,29 @@ $n$個の実数値関数または整数値関数$f : A \rightarrow \mathbb{R}$�
 パレート最適解は複数の目的関数をそのまま考慮された解なので，
 求めたい選好解を見つけることや挙動変数の関係を知ることが可能になる．
 
-パレート最適解とは取りうる値の範囲を全て考慮した上で支配されない解である．
+\section{パレート最適解}
+パレート最適解は，多目的最短経路問題のにおける解の支配関係により定義される．
 解 $x,y$ が以下の条件を満たすとき，$x$ は $y$ を支配する．
 \begin{itemize}
 \item $\forall i \in \{1,\ldots,k\},f_i(x) \le f_i(y)$
 \item $\exists i \in \{1,\ldots,k\},f_i(x) < f_i(y)$
 \item $k$：最適化目的の数，$f$：目的関数
 \end{itemize}
+パレート最適解とは取りうる値の範囲を全て考慮した上で支配されない解である．
+
+図1に，目的関数の数が2の場合のパレート最適解の例を示す．
+図中の黒丸がパレート最適解を示している．
 
 \section{最短経路問題}
-最短経路問題とは重み付きグラフの与えられた2つのノード間を結ぶ経路の中で，
-重みが最小の経路を求める最適化問題である．
+有向もしくは無向グラフをグラフ$G=(V,E)$と表す．
+グラフは頂点集合$V=\{v_1,\ldots,v_n\}$，辺集合$E=\{e_1,\ldots,e_m\}$から成る．
+重み付きグラフの場合，全ての辺$e\in E$は重み$e_w$を持つ．
+無向グラフにおいて，両端点を$s,t$とする辺$e \in E$を$s,t \in e$と表す．
+有向グラフにおいて，始点を$s$，終点を$t$とする辺$e \in E$を$e=(s,t)$と表す．
+$s$から$t$までの距離を$d_{s,t}$と表す．
+最短経路問題とは重み付きグラフ$G=(V,E)$の与えられた2つのノード$s,t$間を結ぶ経路の中で，
+重みが最小の経路($min$ $d_{s,t}$となる経路)を求める最適化問題である．
+
 \begin{description}
   \item[最短経路問題の種類]
 \end{description}
@@ -132,7 +144,7 @@ $n$個の実数値関数または整数値関数$f : A \rightarrow \mathbb{R}$�
 \item 全点対最短経路問題：グラフ内のあらゆる２ノードの組み合わせについての最短経路問題．
 \begin{itemize}
   \item[入力：]重み付きグラフ
-  \item[出力：]全頂点対間の最短経路
+  \item[出力：]全頂点間の最短経路
 \end{itemize}
 \end{itemize}
 \begin{description}
@@ -150,14 +162,14 @@ $n$個の実数値関数または整数値関数$f : A \rightarrow \mathbb{R}$�
 
   \begin{quote}
     \begin{description}
-      \item[入力：] グラフ$G=(V,E)$，始点$s \in V$
+      \item[入力：] グラフ$G=(V,E)$，始点$s \in V$，$Q \leftarrow \emptyset$
       \item[出力：] $s$から全ての頂点への経路
-      \item[Step 1.] $s \rightarrow Q$
+      \item[Step 1.] $Q \leftarrow s$
       \item[Step 2.] $Q = \{\emptyset\}$になるまで以下の操作を行う．
       \begin{description}
         \item[Step 2-1.] $Q$の先頭にあるノード$v$を取り出す．
         \item[Step 2-2.] $u = \{u \in V \mid v,u \in e \land e \in E\}$が未探索のとき，
-        $u \rightarrow Q$．
+        $Q \leftarrow u$．
       \end{description}
 
       \item[Step 3.] 経路を出力する．
@@ -169,7 +181,7 @@ $n$個の実数値関数または整数値関数$f : A \rightarrow \mathbb{R}$�
   \begin{quote}
     \begin{description}
       \item[Step 2-2.] $u = \{u \in V \mid e = (v,u) \land e \in E\}$が未探索のとき，
-      $u \rightarrow Q$．
+      $Q \leftarrow u$．
     \end{description}
   \end{quote}
 \end{itemize}
@@ -186,10 +198,10 @@ $n$個の実数値関数または整数値関数$f : A \rightarrow \mathbb{R}$�
 
   \begin{quote}
     \begin{description}
-      \item[入力：] グラフ$G=(V,E)$，始点$s \in V$，$E$の各辺の長さ
+      \item[入力：] グラフ$G=(V,E)$，始点$s \in V$，$E$の各辺の長さ，$Q \leftarrow \emptyset$
       \item[出力：] $s$から全ての頂点への経路
       \item[Step 1.] $s_w = 0$とし，$v \in V/\{s\}$に対して$v_w = \infty$とする．
-      \item[Step 2.] $s \rightarrow Q$
+      \item[Step 2.] $Q \leftarrow s$
       \item[Step 3.] $Q = \{\emptyset\}$になるまで以下の操作を行う．
       \begin{description}
         \item[Step 3-1.] $v = \{ v \in Q \mid v_w \leq v'_w \land v' \in Q \}$
@@ -202,7 +214,7 @@ $n$個の実数値関数または整数値関数$f : A \rightarrow \mathbb{R}$�
 
           \begin{description}
             \item[Step 3-2-1-1.] $u_w = v_w + e_w$.
-            \item[Step 3-2-1-2.] $u \notin Q$のとき，$u \rightarrow Q$．
+            \item[Step 3-2-1-2.] $u \notin Q$のとき，$Q \leftarrow u$．
           \end{description}
         \end{description}
       \end{description}
@@ -220,7 +232,7 @@ $n$個の実数値関数または整数値関数$f : A \rightarrow \mathbb{R}$�
 $u_w > v_w + e_w$を満たすとき以下の操作を行う．
 \begin{description}
   \item[Step 3-2-1.] $u_w = v_w + e_w$.
-  \item[Step 3-2-2.] $u \notin Q$のとき，$u \rightarrow Q$．
+  \item[Step 3-2-2.] $u \notin Q$のとき，$Q \leftarrow u$．
 \end{description}
 \end{description}
 \end{quote}
@@ -299,15 +311,117 @@ $u_w > v_w + e_w$を満たすとき以下の操作を行う．
 \end{itemize}
 
 \section{多目的最短経路問題}
+多目的最短経路問題とは，最短経路問題の最適化目的の数を複数にすることによって，
+多目的最適化問題に拡張した問題である．
+つまり，目的値が複数の重み付きグラフにおいて与えられた2つのノード間を結ぶ経路の中で，
+パレート最適解となる経路を求める最適化問題である．
+有向もしくは無向グラフをグラフ$G=(V,E)$と表す．
+グラフは頂点集合$V=\{v_1,\ldots,v_n\}$，辺集合$E=\{e_1,\ldots,e_m\}$から成る．
+最適化目的の数を$k$とするとき，全ての辺$e\in E$は重み$\vec{e_w} = \{e_{w1},\ldots,e_{wk}\}$を持つ．
+無向グラフにおいて，両端点を$s,t$とする辺$e \in E$を$s,t \in e$と表す．
+有向グラフにおいて，始点を$s$，終点を$t$とする辺$e \in E$を$e=(s,t)$と表す．
+$s$から$t$までの距離を$\vec{d_{s,t}} = \{d_{s,t1},\ldots,d_{s,tk}\}$と表す．
+また，本研究では全ての値が同じとなる経路は1つのみ求める．
+\begin{description}
+  \item[多目的最短経路問題の種類]
+\end{description}
+\begin{itemize}
+\item 多目的２頂点対最短経路問題：特定の2つのノード間の最短経路問題．
+  \begin{itemize}
+    \item[入力：]重み付きグラフ，始点$s$，終点$t$，最適化目的の数$k$
+    \item[出力：]$s$から$t$へのパレート最適解となる経路の集合
+  \end{itemize}
+  \item 多目的単一始点最短経路問題：特定の1つのノードから他の全ノードとの間の最短経路問題．
+  \begin{itemize}
+    \item[入力：]重み付きグラフ，始点$s$，最適化目的の数$k$
+    \item[出力：]$s$から全頂点へのパレート最適解となる経路の集合
+  \end{itemize}
+  \item 多目的全点対最短経路問題：グラフ内のあらゆる２ノードの組み合わせについての最短経路問題．
+  \begin{itemize}
+    \item[入力：]重み付きグラフ，最適化目的の数$k$
+    \item[出力：]全頂点間のパレート最適解となる経路の集合
+  \end{itemize}
+\end{itemize}
+\begin{description}
+  \item[負の値を含む場合]
+\end{description}
 
-
--------------------------------------------------------------------------------------
+単目的最短経路問題では負の閉路が存在する場合，負の閉路の存在を報告し
+最短経路は求めなかった．これは負の閉路を何度も通過することによって
+重みを更新し続けるためである．
+しかし，多目的最短経路問題の場合，目的関数が複数存在するので
+1つの目的関数において負の閉路が存在する場合でも，
+他の目的関数による最適化をすることで解を求めることができる．
+よって，本研究では負の閉路が存在する目的関数を考慮しない解を求める．
 
 \chapter{従来研究}
+この章では多目的最短経路問題に対する従来研究の成果を紹介する．
 
-\section{１}
+\section{拡張ダイクストラ法}
+拡張ダイクストラ法とは頂点$v$を指定し，
+$v$に隣接する頂点$u$に対する解を更新していく方法である．
+また，いくつかの工夫によって探索空間を削除することが可能である．
+以下に無向グラフに対するアルゴリズムと探索空間の削除方法を記載する．
 
-\section{２}
+\begin{quote}
+  アルゴリズム
+  \begin{description}
+    \item[入力：] グラフ$G=(V,E)$，始点$s \in V$，最適化目的の数$k$，
+    $E$の各辺の重み$\vec{w}=(w_1,\ldots,w_k)$
+    \item[出力：] $s$から全ての頂点への最短経路となるパレート解の集合
+    \item[Step 1.] $L_v \leftarrow \{(s,0,\ldots,0)\}$，
+    $W_v \leftarrow \emptyset$，$v \leftarrow s$
+    \item[Step 2.] ノード$v$の隣接ノード集合$W_v$を求める．
+    \item[Step 3.] $W_v$内のノード全てに対して以下の操作を行う．
+    \begin{description}
+      \item[Step 3-1.] $\omega \in W_v$を選択する．
+      \item[Step 3-2.] $(v,l_{1v},\ldots,l_{kv}) \in L_v$を選択する．
+      \item[Step 3-3.] 始点が$v$，終点が$\omega$である辺$e$の重みベクトルを
+      $\vec{e} = (e_{1w},\ldots,e_{kw})$とし，
+      $(\omega,l^*_{1\omega},\ldots,l^*_{k\omega}) \leftarrow
+      (\omega,l_{1v}+e_{1w},\ldots,l_{kv}+e_{kw})$とする．
+      \item[Step 3-4.] $L_v$の全てのラベルと
+      $(\omega,l^*_{1\omega},\ldots,l^*_{k\omega})$を比較し，
+      $(\omega,l^*_{1\omega},\ldots,l^*_{k\omega})$がパレート解ならば$L_v$
+      に記憶する．
+      \item[Step 3-5.] 全ての頂点$v \in V$が探索されていないとき，
+      $v' \in W_v$を選択し，$v \leftarrow v'$としてStep 2に戻る．
+    \end{description}
+    \item[Step 4.] 全てのパレート解を出力
+  \end{description}
+\end{quote}
+
+\begin{quote}
+  パレート最適解の判定
+  \begin{description}
+    \item[Step 1.] $L_v$と$(\omega,l^*_{1\omega},\ldots,l^*_{k\omega})$
+    を受け取る．
+    \item[Step 2.] $L_v$の全てのラベルに対して以下の操作を行う．
+    \begin{description}
+    \item[Step 2-1.] $(\omega,l'_{1\omega},\ldots,l'_{k\omega}) \in L_v$
+    を選択する．
+    \item[Step 2-2.] 以下の条件を満たすとき，$L_v$を返す．
+    \begin{itemize}
+      \item $\forall i \in \{1,\ldots,k\},l'_{i\omega} \le l^*_{i\omega}$
+    \end{itemize}
+    \item[Step 2-3.] 以下の条件を満たすとき，
+    $L_v \leftarrow L_v \setminus (\omega,l'_{1\omega},\ldots,l'_{k\omega})$．
+    \begin{itemize}
+      \item $\forall i \in \{1,\ldots,k\},l^*_{i\omega} \le l'_{i\omega}$
+      \item $\exists i \in \{1,\ldots,k\},l^*_{i\omega} < l'_{i\omega}$
+    \end{itemize}
+    \end{description}
+    \item[Step 3.] $L_v \leftarrow L_v \cup (\omega,l^*_{1\omega},\ldots,l^*_{k\omega})$を返す．
+  \end{description}
+\end{quote}
+
+\begin{quote}
+  探索空間の削除方法
+  \begin{description}
+    
+  \end{description}
+\end{quote}
+
 
 \chapter{解法の提案と実験的評価}
 
