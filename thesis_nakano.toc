@@ -16,11 +16,11 @@
 \contentsline {section}{\numberline {4.1}問題の分析}{19}
 \contentsline {section}{\numberline {4.2}非負数の問題に対する解法の提案}{25}
 \contentsline {subsection}{\numberline {4.2.1}提案解法１}{25}
-\contentsline {subsection}{\numberline {4.2.2}提案解法２}{29}
-\contentsline {section}{\numberline {4.3}負の値の考慮した問題に対する解法の提案}{31}
-\contentsline {section}{\numberline {4.4}実装における工夫}{31}
-\contentsline {section}{\numberline {4.5}提案解法の評価と分析}{31}
-\contentsline {chapter}{\numberline {第5章}結論}{32}
-\contentsline {section}{\numberline {5.1}研究成果}{32}
-\contentsline {section}{\numberline {5.2}今後の課題}{32}
-\contentsline {chapter}{参考文献}{32}
+\contentsline {subsection}{\numberline {4.2.2}提案解法２}{31}
+\contentsline {section}{\numberline {4.3}負の値の考慮した問題に対する解法の提案}{35}
+\contentsline {section}{\numberline {4.4}実装における工夫}{39}
+\contentsline {section}{\numberline {4.5}提案解法の評価と分析}{39}
+\contentsline {chapter}{\numberline {第5章}結論}{40}
+\contentsline {section}{\numberline {5.1}研究成果}{40}
+\contentsline {section}{\numberline {5.2}今後の課題}{40}
+\contentsline {chapter}{参考文献}{40}
