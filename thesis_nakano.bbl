@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{Konaka}
+Abdullah~Konaka, David~W.Coitb, A.E.: Multi-objective optimization using
+  genetic algorithms: A tutorial, Reliability Engineering \& System Safety,
+  vol.~91, pp. 992--1007. Elsevier (2006)
+
+\bibitem{Ahuja}
+Ahuja, R., Magnanti, T., Orlin, J.: Network Flows: Theory, Algorithms, and
+  Applications. Upper Saddle River, N.J. : Prentice-Hall (1993)
+
+\bibitem{Thorup}
+AT, M.T., T~Labs~Research, Florham~Park, N.: Undirected single-source shortest
+  paths with positive integer weights in linear time, Journal of the ACM,
+  vol.~46, pp. 362--394. Association for Computing Machinery (1999)
+
+\bibitem{Breugem}
+Breugem, T., Dollevoet, T., van~den Heuvel, W.: Analysis of FPTASes for the
+  multi-objective shortest path problem, Computers \& Operations Research,
+  vol.~78, pp. 44--58. Elsevier B.V. (2017)
+
+\bibitem{Floyd}
+Floyd, R.W.: Algorithm 97: Shortest Path, Communications of the ACM, vol.~5, p.
+  345. Association for Computing Machinery (1962)
+
+\bibitem{N.TAKAHASHI1}
+N.Takahashi, H.Yamamoto, T.Akiba: Algorithm for Obtaining Optimal Path in
+  Three-objective Network with a Reduction of Search Spac, Innovation and
+  Supply Chain Management, vol.~9, pp. 103--109. Japan Management Training
+  Center (2015)
+
+\bibitem{Bellman}
+R, B.: On a Routing Problem, QuarterlyofApplied Mathematics, vol.~16, pp.
+  87--90. American Mathematical Society (1958)
+
+\bibitem{Santos}
+Santos, J.L.E.D., Paixão, J.: Labeling Methods for the General Case of the
+  Multi-objective Shortest Path Problem – A Computational Study, Intelligent
+  Systems, Control and Automation: Science and Engineering, vol.~61, pp.
+  489--502. Springer (2012)
+
+\bibitem{Dijkstera}
+W, D.E.: A note on two problems in connection with graphs, Numerische
+  Mathematik, vol.~1, pp. 269--271. Springer (1959)
+
+\end{thebibliography}
