@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {3.3}ラベル付けアルゴリズムによる解法}{16}
 \contentsline {chapter}{\numberline {第4章}解法の提案と実験的評価}{19}
 \contentsline {section}{\numberline {4.1}問題の分析}{19}
-\contentsline {section}{\numberline {4.2}非負数の問題に対する解法の提案}{25}
+\contentsline {section}{\numberline {4.2}非負の問題に対する解法の提案}{25}
 \contentsline {subsection}{\numberline {4.2.1}提案解法１}{25}
 \contentsline {subsection}{\numberline {4.2.2}提案解法２}{31}
 \contentsline {section}{\numberline {4.3}負の値の考慮した問題に対する解法の提案}{35}
