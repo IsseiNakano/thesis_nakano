@@ -169,19 +169,18 @@ $f : A \rightarrow \mathbb{R}$ で定義される．
   始点から近い順に探索する．
   重みがない（すべての重みが１である）最短経路問題に使われる．
   通った辺の本数に応じて重みが決まるため探索によって発見した頂点は最短経路が決定する．
-  計算時間は $O(E)$ である．
+  計算時間は $\mathcal{\mathcal{O}}(E)$ である．
   以下に無向グラフにおける単一始点最短経路問題の解法を示す．
 
   \begin{quote}
     \begin{description}
-      \item[入力：] グラフ $G=(V,E)$ ，始点 $s \in V$ ， $Q \leftarrow \emptyset$
-      \item[出力：] $s$ から全ての頂点への経路
+      \item[入力：] グラフ$G=(V,E)$，始点$s \in V$ ， $Q \leftarrow \emptyset$
+      \item[出力：] $s$から全ての頂点への経路
       \item[Step 1.] $Q \leftarrow s$
       \item[Step 2.] $Q = \{\emptyset\}$になるまで以下の操作を行う．
       \begin{description}
-        \item[Step 2-1.] $Q$の先頭にあるノード $v$ を取り出す．
-        \item[Step 2-2.] $u = \{u \in V \mid v,u \in e \land e \in E\}$ が未探索のとき，
-        $Q \leftarrow u$ ．
+        \item[Step 2-1.] $Q$の先頭にあるノード$v$を取り出す．
+        \item[Step 2-2.] $u = \{u \in V \mid v,u \in e \land e \in E\}$が未探索のとき，$Q \leftarrow u$ ．
       \end{description}
 
       \item[Step 3.] 経路を出力する．
@@ -192,8 +191,7 @@ $f : A \rightarrow \mathbb{R}$ で定義される．
   入力が有向グラフの場合：
   \begin{quote}
     \begin{description}
-      \item[Step 2-2.]  $u = \{u \in V \mid e = (v,u) \land e \in E\}$ が未探索のとき，
-      $Q \leftarrow u$ ．
+      \item[Step 2-2.] $u = \{u \in V \mid e = (v,u) \land e \in E\}$が未探索のとき，$Q \leftarrow u$ ．
     \end{description}
   \end{quote}
 \end{itemize}
@@ -209,26 +207,26 @@ $f : A \rightarrow \mathbb{R}$ で定義される．
   求め，更新対象として探索していく．
   全ての重みが非負の場合，探索したノードの中で重みが最小のものは
   その後の探索で更新されることはないので重みが決定する．
-  ダイクストラ法の計算時間は $O(V^2)$ である．
+  ダイクストラ法の計算時間は $\mathcal{\mathcal{O}}(V^2)$ である．
   以下に無向グラフにおける単一始点最短経路問題の解法を示す．
 
   \begin{quote}
     \begin{description}
-      \item[入力：] グラフ $G=(V,E)$ ，始点 $s \in V$ ， $E$ の各辺の長さ， $Q \leftarrow \emptyset$
+      \item[入力：] グラフ$G=(V,E)$，始点$s \in V$，$E$の各辺の長さ，$Q \leftarrow \emptyset$
       \item[出力：] $s$ から全ての頂点への経路
-      \item[Step 1.] $s_w = 0$ とし， $v \in V/ \{ s\}$ に対して $v_w = \infty$ とする．
+      \item[Step 1.] $s_w = 0$とし，$v \in V/ \{ s\}$に対して $v_w = \infty$とする．
       \item[Step 2.] $Q \leftarrow s$
-      \item[Step 3.] $Q = \{\emptyset\}$ になるまで以下の操作を行う．
+      \item[Step 3.] $Q = \{\emptyset\}$になるまで以下の操作を行う．
       \begin{description}
-        \item[Step 3-1.] $v = \{ v \in Q \mid v_w \leq v'_w \land v' \in Q \}$ を取り出す．
-        \item[Step 3-2.] $e = \{ e \in E \mid v \in e \}$ について以下の操作を行う．
+        \item[Step 3-1.] $v = \{ v \in Q \mid v_w \leq v'_w \land v' \in Q \}$を取り出す．
+        \item[Step 3-2.] $e = \{ e \in E \mid v \in e \}$について以下の操作を行う．
         \begin{description}
-          \item[Step 3-2-1.] $u = \{ u \in V \mid u \in e\}$ となる $u$ に対して，
+          \item[Step 3-2-1.] $u = \{ u \in V \mid u \in e\}$となる$u$に対して，
           $u_w > v_w + e_w$ を満たすとき以下の操作を行う．
 
           \begin{description}
             \item[Step 3-2-1-1.] $u_w = v_w + e_w$ ．
-            \item[Step 3-2-1-2.] $u \notin Q$ のとき， $Q \leftarrow u$ ．
+            \item[Step 3-2-1-2.] $u \notin Q$ のとき，$Q \leftarrow u$ ．
           \end{description}
         \end{description}
       \end{description}
@@ -242,11 +240,11 @@ $f : A \rightarrow \mathbb{R}$ で定義される．
 入力が有向グラフの場合:
 \begin{quote}
 \begin{description}
-\item[Step 3-2.] $u = \{ u \in V \mid (v,u) = e \land e \in E \}$ となる $u$ に対して，
-$u_w > v_w + e_w$ を満たすとき以下の操作を行う．
+\item[Step 3-2.] $u = \{ u \in V \mid (v,u) = e \land e \in E \}$となる$u$に対して，
+$u_w > v_w + e_w$を満たすとき以下の操作を行う．
 \begin{description}
   \item[Step 3-2-1.] $u_w = v_w + e_w$ ．
-  \item[Step 3-2-2.] $u \notin Q$ のとき， $Q \leftarrow u$ ．
+  \item[Step 3-2-2.] $u \notin Q$のとき，$Q \leftarrow u$ ．
 \end{description}
 \end{description}
 \end{quote}
@@ -267,18 +265,18 @@ $u_w > v_w + e_w$ を満たすとき以下の操作を行う．
   負の閉路が存在しない場合は経路の長さの最大が全頂点を通る $|V|-1$ となる．
   負の閉路が存在する場合は無限に更新が行われるため， $|V|$ 回目の探索でも更新が行われる．
   よって， $|V|$ 回目の探索により負の閉路の存在有無を確かめられる．
-  ベルマンフォード法の計算時間は $O(EV)$ である．
+  ベルマンフォード法の計算時間は $\mathcal{\mathcal{O}}(EV)$ である．
   以下に無向グラフにおける単一始点最短経路問題の解法を示す．
 
   \begin{quote}
     \begin{description}
-      \item[入力：] グラフ $G=(V,E)$ ，始点 $s \in V$ ， $E$ の各辺の長さ
-      \item[出力：] $s$ から全ての頂点への経路，負の閉路の存在有無
-      \item[Step 1.] $s_w = 0$ とし， $v \in V/\{s\}$ に対して $v_w = \infty$ とする．
-      \item[Step 2.] $|V|-1$ 回以下の操作を行う．
+      \item[入力：] グラフ$G=(V,E)$，始点$s \in V$ ，$E$の各辺の長さ
+      \item[出力：] $s$から全ての頂点への経路，負の閉路の存在有無
+      \item[Step 1.] $s_w = 0$とし，$v \in V/\{s\}$に対して$v_w = \infty$とする．
+      \item[Step 2.] $|V|-1$回以下の操作を行う．
       \begin{description}
-        \item[Step 2-1.] $e = {e \in E \mid v,u \in e}$ となる $e$ に対して，
-        $u_w > v_w + e_w$ を満たすとき以下の操作を行う．
+        \item[Step 2-1.] $e = {e \in E \mid v,u \in e}$となる$e$に対して，
+        $u_w > v_w + e_w$を満たすとき以下の操作を行う．
         \begin{description}
           \item[Step 2-1-1.] $u_w = v_w + e_w$ ．
         \end{description}
@@ -293,8 +291,8 @@ $u_w > v_w + e_w$ を満たすとき以下の操作を行う．
   入力が有向グラフの場合:
   \begin{quote}
     \begin{description}
-      \item[Step 2-1.] $e = {e \in E \mid (v,u) = e}$ となる $e$ に対して，
-      $u_w > v_w + e_w$ を満たすとき以下の操作を行う．
+      \item[Step 2-1.] $e = {e \in E \mid (v,u) = e}$となる$e$に対して，
+      $u_w > v_w + e_w$を満たすとき以下の操作を行う．
       \begin{description}
         \item[Step 2-1-1.] $u_w = v_w + e_w$ ．
       \end{description}
@@ -316,21 +314,21 @@ $u_w > v_w + e_w$ を満たすとき以下の操作を行う．
   a→b→cという道がa→cという道より短ければa→cの距離を更新する
   という操作は $|V|^3$ 回行われる．
   $|V|^3$ 回の操作後，更新できる解が存在する場合は負の閉路が存在する．
-  ワーシャルフロイド方は負の重みにも対応でき，計算時間は $O(V^3)$ である．
+  ワーシャルフロイド方は負の重みにも対応でき，計算時間は $\mathcal{\mathcal{O}}(V^3)$ である．
   以下に全点対最短経路問題の解法を示す．
 
   \begin{quote}
     \begin{description}
-      \item[入力：] グラフ $G=(V,E)$ ，始点 $s \in V$ ， $E$ の各辺の長さ
+      \item[入力：] グラフ$G=(V,E)$，始点$s \in V$，$E$の各辺の長さ
       \item[出力：] 全頂点対の経路
-      \item[Step 1.] $s_w = 0$ とし， $v \in V/\{s\}$ に対して $v_w = \infty$ とする．
-      \item[Step 2.] 各 $1<k<|V|$ に対して以下の操作を行う．
+      \item[Step 1.] $s_w = 0$とし，$v \in V/\{s\}$に対して$v_w = \infty$とする．
+      \item[Step 2.] 各 $1<k<|V|$に対して以下の操作を行う．
       \begin{description}
-        \item[Step 2-1.] 各 $1<i<|V|$ に対して以下の操作を行う．
+        \item[Step 2-1.] 各 $1<i<|V|$に対して以下の操作を行う．
         \begin{description}
-          \item[Step 2-1-1.] 各 $1<j<|V|$ に対して以下の操作を行う．
+          \item[Step 2-1-1.] 各 $1<j<|V|$に対して以下の操作を行う．
           \begin{description}
-            \item[Step 2-1-1-1.] $d_{i,j} > d_{i,k} + d{k,j}$ を満たすとき，
+            \item[Step 2-1-1-1.] $d_{i,j} > d_{i,k} + d{k,j}$を満たすとき，
             $d_{i,j} = d_{i,k} + d{k,j}$
           \end{description}
         \end{description}
@@ -364,17 +362,17 @@ $s$ から $t$ までの距離を $\vec{d_{s,t}} = \{d_{s,t1},\ldots,d_{s,tk}\}$
 \begin{itemize}
 \item 多目的２頂点対最短経路問題：特定の２つのノード間の最短経路問題．
   \begin{itemize}
-    \item[入力：]重み付きグラフ，始点 $s$ ，終点 $t$ ，最適化目的の数 $k$
-    \item[出力：]$s$ から $t$ へのパレート最適解となる経路の集合
+    \item[入力：]重み付きグラフ，始点$s$，終点$t$，最適化目的の数$k$
+    \item[出力：]$s$から$t$へのパレート最適解となる経路の集合
   \end{itemize}
   \item 多目的単一始点最短経路問題：特定の１つのノードから他の全ノードとの間の最短経路問題．
   \begin{itemize}
-    \item[入力：]重み付きグラフ，始点 $s$，最適化目的の数 $k$
-    \item[出力：]$s$ から全頂点へのパレート最適解となる経路の集合
+    \item[入力：]重み付きグラフ，始点$s$，最適化目的の数$k$
+    \item[出力：]$s$から全頂点へのパレート最適解となる経路の集合
   \end{itemize}
   \item 多目的全点対最短経路問題：グラフ内のあらゆる２ノードの組み合わせについての最短経路問題．
   \begin{itemize}
-    \item[入力：]重み付きグラフ，最適化目的の数 $k$
+    \item[入力：]重み付きグラフ，最適化目的の数$k$
     \item[出力：]全頂点間のパレート最適解となる経路の集合
   \end{itemize}
 \end{itemize}
@@ -393,6 +391,24 @@ $s$ から $t$ までの距離を $\vec{d_{s,t}} = \{d_{s,t1},\ldots,d_{s,tk}\}$
 
 \chapter{従来研究}
 この章では多目的最短経路問題に対する従来研究の成果を紹介する．
+\begin{description}
+  \item[入力：] グラフ$G=(V,E)$，始点$s \in V$，最適化目的の数$k$，
+  各辺の重みを返す関数 $w : E \to \mathbb{R}^k$
+  \item[出力：] $s$から全ての頂点への最短経路となるパレート解の集合
+\end{description}
+\begin{quote}
+  \textbf{記号}
+  \begin{description}
+    \item[$k$：] 最適化目的の数
+    \item[$v \in V$，$j = 1 , \ldots , k$に対して]
+    \item[$l_{v(j)}$：] 始点からノード $v$に到達したときに生じる
+    第$j$番目の目的関数における総コスト
+    \item[$e \in E$，$j = 1 , \ldots , k$に対して]
+    \item[$e_{(j)}$：] 辺$e$の第$j$番目の目的関数におけるコスト
+  \end{description}
+\end{quote}
+
+
 
 \section{拡張ダイクストラ法}
 従来研究としてN.Takahashiら\cite{N.TAKAHASHI1}に提案された
@@ -407,39 +423,30 @@ $v$ に隣接する頂点 $u$ に対する解を更新していく方法であ�
 \begin{quote}
   \textbf{記号}
   \begin{description}
-    \item[$k$：] 最適化目的の数
-    \item[$v \in V$ に対して]
-    \item[$W_v$：] ノード $v$ に隣接するノード集合
-    \item[$v \in V$，$j = 1 , \ldots , k$ に対して]
-    \item[$l_{jv}$：] 始点からノード $v$ に到達したときに生じる
-    第 $j$ 番目の目的関数における総コスト
-    \item[$e \in E$，$j = 1 , \ldots , k$ に対して]
-    \item[$e_{jw}$：] 辺 $e$ の第 $j$ 番目の目的関数におけるコスト
+    \item[$v \in V$に対して]
+    \item[$W_v$：] ノード $v$に隣接するノード集合
   \end{description}
 \end{quote}
 
 \begin{quote}
   \textbf{アルゴリズム}
   \begin{description}
-    \item[入力：] グラフ $G=(V,E)$ ，始点 $s \in V$ ，最適化目的の数 $k$ ，
-    各辺の重みを返す関数 $w : E \to \mathbb{R}^k$
-    \item[出力：] $s$ から全ての頂点への最短経路となるパレート解の集合
-    \item[Step 1.] $L_v \leftarrow (s,0,\ldots,0)$ ，
-    $W_v \leftarrow \emptyset$ ， $v \leftarrow s$
-    \item[Step 2.] $W_v$ を求める．
-    \item[Step 3.] $W_v$ 内のノード全てに対して以下の操作を行う．
+    \item[Step 1.] $L_v \leftarrow (s,0,\ldots,0)$，
+    $W_v \leftarrow \emptyset$，$v \leftarrow s$
+    \item[Step 2.] $W_v$を求める．
+    \item[Step 3.] $W_v$内のノード全てに対して以下の操作を行う．
     \begin{description}
-      \item[Step 3-1.] $\omega \in W_v$ を選択する．
-      \item[Step 3-2.] $(v,l_{1v},\ldots,l_{kv}) \in L_v$ を選択する．
-      \item[Step 3-3.] 始点が $v$ ，終点が $\omega$ である辺 $e$ の重みベクトルを
-      $\vec{e} = (e_{1w},\ldots,e_{kw})$ とし，
-      $(\omega,l^*_{1\omega},\ldots,l^*_{k\omega}) \leftarrow
-      (\omega,l_{1v}+e_{1w},\ldots,l_{kv}+e_{kw})$ とする．
-      \item[Step 3-4.] $L_v$ と
-      $(\omega,l^*_{1\omega},\ldots,l^*_{k\omega})$ に対して
+      \item[Step 3-1.] $\omega \in W_v$を選択する．
+      \item[Step 3-2.] $(v,l_{v(1)},\ldots,l_{v(k)}) \in L_v$を選択する．
+      \item[Step 3-3.] 始点が$v$，終点が$\omega$である辺$e$の重みベクトルを
+      $\vec{e} = (e_{(1)},\ldots,e_{(k)})$とし，
+      $(\omega,l^*_{\omega(1)},\ldots,l^*_{\omega(k)}) \leftarrow
+      (\omega,l_{v(1)}+e_{(1)},\ldots,l_{v(k)}+e_{(k)})$とする．
+      \item[Step 3-4.] $L_v$と
+      $(\omega,l^*_{\omega(1)},\ldots,l^*_{\omega(k)})$に対して
       パレート最適解の判定を行う．
-      \item[Step 3-5.] 全ての頂点 $v \in V$ が探索されていないとき，
-      $v' \in W_v$ を選択し， $v \leftarrow v'$ として Step 2 に戻る．
+      \item[Step 3-5.] 全ての頂点$v \in V$が探索されていないとき，
+      $v' \in W_v$を選択し，$v\leftarrow v'$としてStep 2に戻る．
     \end{description}
     \item[Step 4.] 全てのパレート解を出力
   \end{description}
@@ -448,25 +455,25 @@ $v$ に隣接する頂点 $u$ に対する解を更新していく方法であ�
 \begin{quote}
   \textbf{パレート最適解の判定}
   \begin{description}
-    \item[Step 1.] $L_v$ と $(\omega,l^*_{1\omega},\ldots,l^*_{k\omega})$
+    \item[Step 1.] $L_v$と$(\omega,l^*_{\omega(1)},\ldots,l^*_{\omega(k)})$
     を受け取る．
-    \item[Step 2.] $L_v$ の全てのラベルに対して以下の操作を行う．
+    \item[Step 2.] $L_v$の全てのラベルに対して以下の操作を行う．
     \begin{description}
-    \item[Step 2-1.] $(\omega,l'_{1\omega},\ldots,l'_{k\omega}) \in L_v$
+    \item[Step 2-1.] $(\omega,l'_{\omega(1)},\ldots,l'_{\omega(k)}) \in L_v$
     を選択する．
-    \item[Step 2-2.] 以下の条件を満たすとき， $L_v$ を返す．
+    \item[Step 2-2.] 以下の条件を満たすとき，$L_v$ を返す．
     \begin{itemize}
-      \item $\forall i \in \{1,\ldots,k\},l'_{i\omega} \le l^*_{i\omega}$
+      \item $\forall i \in \{1,\ldots,k\},l'_{\omega(i)} \le l^*_{\omega(i)}$
     \end{itemize}
     \item[Step 2-3.] 以下の条件を満たすとき，
-    $L_v \leftarrow L_v \setminus \{(\omega,l'_{1\omega},\ldots,l'_{k\omega})\}$ ．
+    $L_v \leftarrow L_v \setminus \{(\omega,l'_{\omega(1)},\ldots,l'_{\omega(k)})\}$ ．
     \begin{itemize}
-      \item $\forall i \in \{1,\ldots,k\},l^*_{i\omega} \le l'_{i\omega}$
-      \item $\exists i \in \{1,\ldots,k\},l^*_{i\omega} < l'_{i\omega}$
+      \item $\forall i \in \{1,\ldots,k\},l^*_{\omega(i)} \le l'_{\omega(i)}$
+      \item $\exists i \in \{1,\ldots,k\},l^*_{\omega(i)} < l'_{\omega(i)}$
     \end{itemize}
     \end{description}
     \item[Step 3.]
-    $L_v \leftarrow L_v \cup \{(\omega,l^*_{1\omega},\ldots,l^*_{k\omega})\}$ を返す．
+    $L_v \leftarrow L_v \cup \{(\omega,l^*_{\omega(1)},\ldots,l^*_{\omega(k)})\}$を返す．
   \end{description}
 \end{quote}
 
@@ -510,12 +517,6 @@ $v$ に隣接する頂点 $u$ に対する解を更新していく方法であ�
 \begin{quote}
   \textbf{記号}
   \begin{description}
-    \item[$k$：] 最適化目的の数
-    \item[$v \in V$，$j = 1 , \ldots , k$ に対して]
-    \item[$l_{jv}$：] 始点からノード $v$ に到達したときに生じる
-    第$j$番目の目的関数における総コスト
-    \item[$e \in E$，$j = 1 , \ldots , k$ に対して]
-    \item[$e_{jw}$：] 辺 $e$ の第 $j$ 番目の目的関数におけるコスト
     \item[$L_T$：] 更新対象とする経路のラベル
     \item[$L_P$：] 更新対象としない経路のラベル
   \end{description}
@@ -524,44 +525,41 @@ $v$ に隣接する頂点 $u$ に対する解を更新していく方法であ�
 \begin{quote}
   \textbf{アルゴリズム}
   \begin{description}
-    \item[入力：] グラフ $G=(V,E)$，始点$s \in V$ ，最適化目的の数 $k$ ，
-    各辺の重みを返す関数 $w : E \to \mathbb{R}^k$
-    \item[出力：] $s$ から全ての頂点への最短経路となるパレート解の集合
     \item[Step 1.] $L_T \leftarrow (s,0,\ldots,0)$ ，
     $L_P \leftarrow \emptyset$
-    \item[Step 2.] $L_T = \{\emptyset\}$ となるまで以下の操作を行う．
+    \item[Step 2.] $L_T = \{\emptyset\}$となるまで以下の操作を行う．
     \begin{description}
-      \item[Step 2-1.] $L_T$ の先頭にある
-      $(\omega,l_{1\omega},\ldots,l_{k\omega})\in L_T$ を選択する．
+      \item[Step 2-1.] $L_T$の先頭にある
+      $(\omega,l_{\omega(1)},\ldots,l_{\omega(k)})\in L_T$を選択する．
       \item[Step 2-2.] $L_T \leftarrow L_T \setminus
-      \{ (\omega,l_{1\omega},\ldots,l_{k\omega}) \}$
+      \{ (\omega,l_{\omega(1)},\ldots,l_{\omega(k)}) \}$
       \item[Step 2-3.] 以下の条件を満たすとき,
-      $L_P \leftarrow L_P \cup \{(\omega,l_{1\omega},\ldots,l_{k\omega})\}$ とする．
+      $L_P \leftarrow L_P \cup \{(\omega,l_{\omega(1)},\ldots,l_{\omega(k)})\}$とする．
       \begin{itemize}
-        \item 任意の $(\omega^*,l_{1\omega^*},\ldots,l_{k\omega^*})\in L_P$ に
-        $(\omega,l_{1\omega},\ldots,l_{k\omega})$ が支配されない．
-        \item 任意の$(\omega^*,l_{1\omega^*},\ldots,l_{k\omega^*}) \in L_P$ と
-        $(\omega,l_{1\omega},\ldots,l_{k\omega})$ における全ての目的関数値が同値でない．
+        \item 任意の$(\omega^*,l_{\omega^*(1)},\ldots,l_{\omega^*(k)})\in L_P$に
+        $(\omega,l_{\omega(1)},\ldots,l_{\omega(k)})$が支配されない．
+        \item 任意の$(\omega^*,l_{\omega^*(1)},\ldots,l_{\omega^*(k)}) \in L_P$と
+        $(\omega,l_{\omega(1)},\ldots,l_{\omega(k)})$における全ての目的関数値が同値でない．
       \end{itemize}
-      \item[Step 2-4.] 頂点 $\omega$ に辺 $e$ によって接続している頂点 $u$
+      \item[Step 2-4.] 頂点$\omega$に辺$e$によって接続している頂点$u$
       に対して以下の操作を行う．
       \begin{description}
-        \item[Step 2-4-1.] 辺 $e$ の重みベクトルを
-        $\vec{e} = (e_{1w},\ldots,e_{kw})$ とし，
-        $(\omega',l_{1\omega'},\ldots,l_{k\omega'}) \leftarrow
-        (\omega',l_{1\omega}+e_{1w},\ldots,l_{k\omega}+e_{kw})$ とする．
+        \item[Step 2-4-1.] 辺$e$の重みベクトルを
+        $\vec{e} = (e_{(1)},\ldots,e_{(k)})$とし，
+        $(\omega',l_{\omega'(1)},\ldots,l_{\omega'(k)}) \leftarrow
+        (\omega',l_{\omega(1)}+e_{(1)},\ldots,l_{\omega(k)}+e_{(k)})$とする．
         \item[Step 2-4-2.] 以下の条件を満たすとき，
-        $L_T \leftarrow L_T \cup \{(\omega',l_{1\omega'},\ldots,l_{k\omega'})\}$ とする．
+        $L_T \leftarrow L_T \cup \{(\omega',l_{\omega'(1)},\ldots,l_{\omega'(k)})\}$とする．
         \begin{itemize}
-          \item 任意の $(\omega^*,l_{1\omega^*},\ldots,l_{k\omega^*})\in L_P \cup L_T$ に
-          $(\omega',l_{1\omega'},\ldots,l_{k\omega'})$ が支配されない．
-          \item 任意の $(\omega^*,l_{1\omega^*},\ldots,l_{k\omega^*}) \in L_P \cup L_T$ と
-          $(\omega',l_{1\omega'},\ldots,l_{k\omega'})$ における全ての目的関数値が同値でない．
+          \item 任意の$(\omega^*,l_{\omega^*(1)},\ldots,l_{\omega^*(k)})\in L_P \cup L_T$に
+          $(\omega',l_{\omega'(1)},\ldots,l_{\omega'(k)})$が支配されない．
+          \item 任意の$(\omega^*,l_{\omega^*(1)},\ldots,l_{\omega^*(k)}) \in L_P \cup L_T$と
+          $(\omega',l_{\omega'(1)},\ldots,l_{\omega'(k)})$における全ての目的関数値が同値でない．
         \end{itemize}
-        \item[Step 2-4-3.] 任意の $(\omega'',l_{1\omega''},\ldots,l_{k\omega''})\in L_T$
-        に対して $(\omega',l_{1\omega'},\ldots,l_{k\omega'})$ が
-        $(\omega'',l_{1\omega''},\ldots,l_{k\omega''})$ を支配しているとき，
-        $L_T \leftarrow L_T \setminus \{(\omega'',l_{1\omega''},\ldots,l_{k\omega''})\}$ とする．
+        \item[Step 2-4-3.] 任意の$(\omega'',l_{\omega''(1)},\ldots,l_{\omega''(k)})\in L_T$
+        に対して$(\omega',l_{\omega'(1)},\ldots,l_{\omega'(k)})$が
+        $(\omega'',l_{\omega''(1)},\ldots,l_{\omega''(k)})$を支配しているとき，
+        $L_T \leftarrow L_T \setminus \{(\omega'',l_{\omega''(1)},\ldots,l_{\omega''(k)})\}$とする．
       \end{description}
     \end{description}
     \item[Step 3.] 全てのパレート解を出力
@@ -610,14 +608,8 @@ $v$ に隣接する頂点 $u$ に対する解を更新していく方法であ�
 \begin{quote}
   \textbf{記号}
   \begin{description}
-    \item[$k$：] 最適化目的の数
-    \item[$v \in V$ に対して]
-    \item[$L_v$：] 頂点 $v$ に対する経路のラベル
-    \item[$v \in V$，$j = 1 , \ldots , k$ に対して]
-    \item[$l_{jv}$：] 始点からノード $v$ に到達したときに生じる
-    第$j$番目の目的関数における総コスト
-    \item[$e \in E$，$j = 1 , \ldots , k$ に対して]
-    \item[$e_{jw}$：] 辺 $e$ の第 $j$ 番目の目的関数におけるコスト
+    \item[$v \in V$に対して]
+    \item[$L_v$：] 頂点$v$に対する経路のラベル
     \item[$X$：] 更新対象とする頂点集合
   \end{description}
 \end{quote}
@@ -625,38 +617,35 @@ $v$ に隣接する頂点 $u$ に対する解を更新していく方法であ�
 \begin{quote}
   \textbf{アルゴリズム}
   \begin{description}
-    \item[入力：] グラフ $G=(V,E)$ ，始点 $s \in V$ ，最適化目的の数 $k$ ，
-    各辺の重みを返す関数 $w : E \to \mathbb{R}^k$
-    \item[出力：] $s$ から全ての頂点への最短経路となるパレート解の集合
-    \item[Step 1.] $\forall v \in V , L_v \leftarrow \emptyset$ ，
+    \item[Step 1.] $\forall v \in V , L_v \leftarrow \emptyset$，
     $L_s \leftarrow (s,0,\ldots,0)$，$X \leftarrow s$
-    \item[Step 2.] $X = \{\emptyset\}$ となるまで以下の操作を行う．
+    \item[Step 2.] $X = \{\emptyset\}$となるまで以下の操作を行う．
     \begin{description}
-      \item[Step 2-1.] $v \in X$ となる頂点 $v$ を選択する．
+      \item[Step 2-1.] $v \in X$となる頂点$v$を選択する．
       \item[Step 2-2.] $X \leftarrow X \setminus \{ v \}$
-      \item[Step 2-3.] $e = {e \in E \mid v,u \in e}$ となる
-      $e$ に対して以下の操作を行う．
+      \item[Step 2-3.] $e = {e \in E \mid v,u \in e}$となる
+      $e$に対して以下の操作を行う．
       \begin{description}
-        \item[Step 2-3-1.] 頂点 $v$ に対する全ての経路
-        $(v',l_{1v'},\ldots,l_{kv'}) \in L_v$ に対して以下の操作を行う．
+        \item[Step 2-3-1.] 頂点$v$に対する全ての経路
+        $(v',l_{v'(1)},\ldots,l_{v'(k)}) \in L_v$に対して以下の操作を行う．
         \begin{description}
-          \item[Step 2-3-1-1.] 辺 $e$ の重みベクトルを
-          $\vec{e} = (e_{1w},\ldots,e_{kw})$ とし，
-          $(u',l_{1u'},\ldots,l_{ku'}) \leftarrow
-          (u',l_{1v}+e_{1w},\ldots,l_{kv}+e_{kw})$ とする．
+          \item[Step 2-3-1-1.] 辺$e$の重みベクトルを
+          $\vec{e} = (e_{(1)},\ldots,e_{(k)})$とし，
+          $(u',l_{u'(1)},\ldots,l_{u'(k)}) \leftarrow
+          (u',l_{v(1)}+e_{(1)},\ldots,l_{v(k)}+e_{(k)})$とする．
           \item[Step 2-3-1-2.] 以下の条件を満たすとき，
-          $L_u \leftarrow L_u \cup \{(u',l_{1u'},\ldots,l_{ku'})\}$ ，
-          $X \leftarrow X \cup \{ u\}$ とする．
+          $L_u \leftarrow L_u \cup \{(u',l_{u'(1)},\ldots,l_{u'(k)})\}$，
+          $X \leftarrow X \cup \{ u\}$とする．
           \begin{itemize}
-            \item 任意の $(u^*,l_{1u^*},\ldots,l_{ku^*})\in L_u$ に
-            $(u',l_{1u'},\ldots,l_{ku'})$ が支配されない．
-            \item 任意の $(u^*,l_{1u^*},\ldots,l_{ku^*}) \in L_u$ と
-            $(u',l_{1u'},\ldots,l_{ku'})$ における全ての目的関数値が同値でない．
+            \item 任意の$(u^*,l_{u^*(1)},\ldots,l_{u^*(k)})\in L_u$に
+            $(u',l_{u'(1)},\ldots,l_{u'(k)})$が支配されない．
+            \item 任意の$(u^*,l_{u^*(1)},\ldots,l_{u^*(k)}) \in L_u$と
+            $(u',l_{u'(1)},\ldots,l_{u'(k)})$における全ての目的関数値が同値でない．
           \end{itemize}
-          \item[Step 2-3-1-3.] 任意の $(u'',l_{1u''},\ldots,l_{ku''})\in L_u$
-          に対して$(u',l_{1u'},\ldots,l_{ku'})$ が
-          $(u'',l_{1u''},\ldots,l_{ku''})$ を支配しているとき，
-          $L_u \leftarrow L_u \setminus \{(u'',l_{1u''},\ldots,l_{ku''})\}$ とする．
+          \item[Step 2-3-1-3.] 任意の$(u'',l_{u''(1)},\ldots,l_{u''(k)})\in L_u$
+          に対して$(u',l_{u'(1)},\ldots,l_{u'(k)})$が
+          $(u'',l_{u''(1)},\ldots,l_{u''(k)})$を支配しているとき，
+          $L_u \leftarrow L_u \setminus \{(u'',l_{u''(1)},\ldots,l_{u''(k)})\}$とする．
         \end{description}
       \end{description}
     \end{description}
@@ -692,10 +681,10 @@ $s$ から $v$ への経路の数は $V'$ から $i$ 個の頂点を選択し並
 頂点数を $|N|=n$ とすると $V'$ の要素数は $|V'|=n-2$ なので，
 $\displaystyle \sum_{i=0}^{n-2} {}_{(n-2)}P_i$ で表される．
 よって，既知の経路との比較は最大で $\displaystyle \sum_{i=0}^{n-2} {}_{(n-2)}P_i$ 回である．
-最適化目的の数を $k$ とすると既知の経路との比較は，単目的最短経路問題では1回，計算量は $O(1)$ であり，
-多目的最短経路問題では最大で $\displaystyle \sum_{i=0}^{n-2} {}_{(n-2)}P_i$ 回，計算量は $O(k*n^1)$ であるため
-パレート最適解の数に比例して解くことが難しくなる．（ $O(\displaystyle \sum_{i=0}^{n} i)=O(n)$，$O({}_nP_i)=O(n^i)$ より，
-$O(\displaystyle \sum_{i=0}^{n-2} {}_{(n-2)}P_i)=O(k*n^{n-1})$ ）
+最適化目的の数を $k$ とすると既知の経路との比較は，単目的最短経路問題では1回，計算量は $\mathcal{O}(1)$ であり，
+多目的最短経路問題では最大で $\displaystyle \sum_{i=0}^{n-2} {}_{(n-2)}P_i$ 回，計算量は $\mathcal{O}(k* L_v+L)$ であるため
+パレート最適解の数に比例して解くことが難しくなる．（ $\mathcal{O}(\displaystyle \sum_{i=0}^{n} i)=\mathcal{O}(n)$，$\mathcal{O}({}_nP_i)=\mathcal{O}(n^i)$ より，
+$\mathcal{O}(\displaystyle \sum_{i=0}^{n-2} {}_{(n-2)}P_i)=\mathcal{O}(k*n^{n-1})$ ）
 パレート最適解の数に比例して解くことが難しくなることを照明したため，
 それぞれのインスタンスに対してパレート最適解の数がどのように変化するか分析する．
 
@@ -810,14 +799,14 @@ $(s,v,t)$ の各目的関数を $f_{svt1},f_{svt2},f_{svt3}$ とする．
 
 頂点に入ってくる辺の重みベクトルに対する相関に対する分析．
 最適化目的の数３のため，各目的関数を $(f_1,f_2,f_3)$ とし，任意の辺 $e　\in E$ における重みベクトルを
- $\vec{e}=(e(f_1),e(f_2),e(f_3))$ とする．終点が頂点 $u$ である辺（頂点 $u$ に入ってくる辺）の集合を $E_u$ とする．
+ $\vec{e}=(e(1),e(2),e(3))$ とする．終点が頂点 $u$ である辺（頂点 $u$ に入ってくる辺）の集合を $E_u$ とする．
 頂点に入ってくる辺の重みベクトルに対する相関とは３つある． $\forall E_v , v \in V$ に対する相関であり，それぞれ
  $\{f_1,f_2\}$ 間の相関 $c_{12}$ ， $\{f_2,f_3\}$ 間の相関 $c_{23}$ ， $\{f_1,f_3\}$ 間の相関 $c_{13}$ である．
-$c_{12}=1$ のとき，任意の辺 $x,v\in E$ に対して， $x(f_1)=x(f_2)\times l$ のとき $y(f_1)=y(f_2)\times l$ が成り立つ．
-つまり， $c_{12}=1$ のとき，任意の辺 $x,v\in E$ に対して， $x(f_1)<x(f_2) \land y(f_1)<y(f_2)$ または
- $x(f_1)=x(f_2) \land y(f_1)=y(f_2)$ または $x(f_1)>x(f_2) \land y(f_1)>y(f_2)$ が成り立つ．
-$c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺 $e \ inE$ を $\vec{e}=(e(f_1),e(f_2),e(f_3))$ とすると
- $\forall e'\in E,\vec{e'} = l\times(e(f_1),e(f_2),e(f_3))$ が成り立つため各頂点に対する解の数はそれぞれ１となり，
+$c_{12}=1$ のとき，任意の辺 $x,v\in E$ に対して， $x(1)=x(2)*l$ のとき $y(1)=y(2)*l$ が成り立つ．
+つまり， $c_{12}=1$ のとき，任意の辺 $x,v\in E$ に対して， $x(1)<x(2) \land y(1)<y(2)$ または
+ $x(1)=x(2) \land y(1)=y(2)$ または $x(1)>x(2) \land y(1)>y(2)$ が成り立つ．
+$c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺 $e \in E$ を $\vec{e}=(e(1),e(2),e(3))$ とすると
+ $\forall e'\in E,\vec{e'} = l*(e(1),e(2),e(3))$ が成り立つため各頂点に対する解の数はそれぞれ１となり，
 全体の解の数は $|V|$ となる．また，各目的関数間の相関が強ければ強いほど頂点 $u\in V$ における $s$ からの経路 $u'_{s}$ と
  $u''_{s}$ に対して，支配関係（ $u'_{s}$ が $u''_{s}$ を支配するまたは $u''_{s}$ が $u'_{s}$ を支配する）が成り立つ可能性が
 高いため全体の経路の数は少なくなる．
@@ -827,14 +816,14 @@ $c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺
 
 頂点から出ていく辺の重みベクトルに対する相関に対する分析．
 最適化目的の数３のため，各目的関数を $(f_1,f_2,f_3)$ とし，任意の辺 $e　\in E$ における重みベクトルを
- $\vec{e}=(e(f_1),e(f_2),e(f_3))$ とする．始点が頂点 $u$ である辺（頂点 $u$ から出ていく辺）の集合を $E_u$ とする．
+ $\vec{e}=(e(1),e(2),e(3))$ とする．始点が頂点 $u$ である辺（頂点 $u$ から出ていく辺）の集合を $E_u$ とする．
 頂点から出ていく辺の重みベクトルに対する相関とは３つある．$\forall E_v , v \in V$ に対する相関であり，それぞれ
  $\{f_1,f_2\}$ 間の相関 $c_{12}$ ， $\{f_2,f_3\}$ 間の相関 $c_{23}$ ， $\{f_1,f_3\}$ 間の相関 $c_{13}$ である．
-$c_{12}=1$ のとき，任意の辺 $x,v\in E$ に対して， $x(f_1)=x(f_2)\times l$ のとき $y(f_1)=y(f_2)\times l$ が成り立つ．
-つまり， $c_{12}=1$ のとき，任意の辺 $x,v\in E$ に対して， $x(f_1)<x(f_2) \land y(f_1)<y(f_2)$ または
- $x(f_1)=x(f_2) \land y(f_1)=y(f_2)$ または $x(f_1)>x(f_2) \land y(f_1)>y(f_2)$ が成り立つ．
-$c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺 $e \ inE$ を $\vec{e}=(e(f_1),e(f_2),e(f_3))$ とすると
- $\forall e'\in E,\vec{e'} = l\times(e(f_1),e(f_2),e(f_3))$ が成り立つため各頂点に対する解の数はそれぞれ１となり，
+$c_{12}=1$ のとき，任意の辺 $x,v\in E$ に対して， $x(1)=x(2)* l$ のとき $y(1)=y(2)*l$ が成り立つ．
+つまり， $c_{12}=1$ のとき，任意の辺 $x,v\in E$ に対して， $x(1)<x(2) \land y(1)<y(2)$ または
+ $x(1)=x(2) \land y(1)=y(2)$ または $x(1)>x(2) \land y(1)>y(2)$ が成り立つ．
+$c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺 $e \ inE$ を $\vec{e}=(e(1),e(2),e(3))$ とすると
+ $\forall e'\in E,\vec{e'} = l*(e(1),e(2),e(3))$ が成り立つため各頂点に対する解の数はそれぞれ１となり，
 全体の解の数は $|V|$ となる．また，各目的関数間の相関が強ければ強いほど頂点 $u\in V$ における $s$ からの経路 $u'_{s}$ と
  $u''_{s}$ に対して，支配関係（ $u'_{s}$ が $u''_{s}$ を支配するまたは $u''_{s}$ が $u'_{s}$ を支配する）が成り立つ可能性が
 高いため全体の経路の数は少なくなる．
@@ -863,7 +852,7 @@ $c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺
 のためその目的関数が最小の経路（頂点）を選択すれば良い．目的関数が複数である多目的最短経路問題では，
 各目的関数に対して評価値をもうけ優先順位をつける方法（例：目的関数が $f_1,f_2,f_3$ のとき
  $f_2 \rightarrow f_1 \rightarrow f_3 $ という優先順位をつける）や１つの目的関数として計算する方法
-（例：目的関数が $f_1,f_2,f_3$ のとき $f_x = f_1 + f_2 \times 2 + f_3 \times 4$ という目的関数を計算する）
+（例：目的関数が $f_1,f_2,f_3$ のとき $f_x = f_1 + f_2 * + f_3 * 4$ という目的関数を計算する）
 が考えられる．もう１つの問題は重みが最小である経路（更新対象）の探索するために多くの比較が必要となることである．
 単目的最短経路問題の場合選択肢となる経路（頂点）は頂点数分なので最大で $|V|$ つあるが，多目的最短経路の場合
 選択肢となる経路は１頂点に対して複数存在するため最大で $\displaystyle \sum_{i=0}^{n-1} {}_{(n-1)}P_i$
@@ -885,6 +874,22 @@ $c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺
 
 \section{非負の問題に対する解法の提案}
 非負である多目的最短経路問題における解法を提案する．
+\begin{description}
+  \item[入力：] グラフ$G=(V,E)$，始点$s \in V$，最適化目的の数$k$，
+  各辺の重みを返す関数 $w : E \to \mathbb{R}^k$
+  \item[出力：] $s$から全ての頂点への最短経路となるパレート解の集合
+\end{description}
+\begin{quote}
+  \textbf{記号}
+  \begin{description}
+    \item[$k$：] 最適化目的の数
+    \item[$v \in V$，$j = 1 , \ldots , k$に対して]
+    \item[$l_{v(j)}$：] 始点からノード $v$に到達したときに生じる
+    第$j$番目の目的関数における総コスト
+    \item[$e \in E$，$j = 1 , \ldots , k$に対して]
+    \item[$e_{(j)}$：] 辺$e$の第$j$番目の目的関数におけるコスト
+  \end{description}
+\end{quote}
 
 \subsection{提案解法１}
 多目的最短経路問題に対する単目的最短経路問題アルゴリズムの実装で述べたようにダイクストラ法とベルマンフォード法
@@ -901,52 +906,43 @@ $c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺
 \begin{quote}
   \textbf{記号}
   \begin{description}
-    \item[$k$：] 最適化目的の数
-    \item[$L$：] 解となるラベル
+    \item[$L$：] 解となる経路のラベル
     \item[$X$：] 更新対象とする頂点集合
-    \item[$v \in V$，$j = 1 , \ldots , k$ に対して]
-    \item[$l_{jv}$：] 始点からノード $v$ に到達したときに生じる
-    第$j$番目の目的関数における総コスト
-    \item[$e \in E$，$j = 1 , \ldots , k$ に対して]
-    \item[$e_{jw}$：] 辺 $e$ の第 $j$ 番目の目的関数におけるコスト
   \end{description}
 \end{quote}
 
 \begin{quote}
   \textbf{アルゴリズム}
   \begin{description}
-    \item[入力：] グラフ$G=(V,E)$ ，始点 $s \in V$ ，最適化目的の数 $k$ ，
-    各辺の重みを返す関数 $w : E \to \mathbb{R}^k$
-    \item[出力：] $s$ から全ての頂点への最短経路となるパレート解の集合
-    \item[Step 1.] $\forall v \in V , L_v \leftarrow \emptyset$ ，
+    \item[Step 1.] $\forall v \in V , L_v \leftarrow \emptyset$，
     $L_s \leftarrow (s,0,\ldots,0)$ ， $X \leftarrow s$
-    \item[Step 2.] $X = \{\emptyset\}$ となるまで以下の操作を行う．
+    \item[Step 2.] $X = \{\emptyset\}$となるまで以下の操作を行う．
     \begin{description}
-      \item[Step 2-1.] $v \in X$ となる頂点 $v$ を選択する．
+      \item[Step 2-1.] $v \in X$となる頂点$v$を選択する．
       \item[Step 2-2.] $X \leftarrow X \setminus \{ v \}$
-      \item[Step 2-3.] $e = {e \in E \mid v,u \in e}$ となる
-      $e$ に対して以下の操作を行う．
+      \item[Step 2-3.] $e = {e \in E \mid v,u \in e}$となる
+      $e$に対して以下の操作を行う．
       \begin{description}
-        \item[Step 2-3-1.] 頂点 $v$ に対する全ての経路
-        $(v',l_{1v'},\ldots,l_{kv'}) \in L,v=v'$ に対して以下の操作を行う．
+        \item[Step 2-3-1.] 頂点$v$に対する全ての経路
+        $(v',l_{v'(1)},\ldots,l_{v'(k)}) \in L,v=v'$に対して以下の操作を行う．
         \begin{description}
-          \item[Step 2-3-1-1.] 辺 $e$ の重みベクトルを
-          $\vec{e} = (e_{1w},\ldots,e_{kw})$ とし，
-          $(u',l_{1u'},\ldots,l_{ku'}) \leftarrow
-          (u',l_{1v}+e_{1w},\ldots,l_{kv}+e_{kw})$ とする．
+          \item[Step 2-3-1-1.] 辺$e$の重みベクトルを
+          $\vec{e} = (e_{(1)},\ldots,e_{(k)})$とし，
+          $(u',l_{u'(1)},\ldots,l_{u'(k)}) \leftarrow
+          (u',l_{v(1)}+e_{(1)},\ldots,l_{v(k)}+e_{(k)})$とする．
           \item[Step 2-3-1-2.] 以下の条件を満たすとき，
-          $L \leftarrow L \cup \{(u',l_{1u'},\ldots,l_{ku'})\}$ ，
-          $X \leftarrow X \cup \{ u\}$ とする．
+          $L \leftarrow L \cup \{(u',l_{u'(1)},\ldots,l_{u'(k)})\}$，
+          $X \leftarrow X \cup \{ u\}$とする．
           \begin{itemize}
-            \item 任意の $(u^*,l_{1u^*},\ldots,l_{ku^*})\in L,u=u^*$ に
-            $(u',l_{1u'},\ldots,l_{ku'})$ が支配されない．
-            \item 任意の $(u^*,l_{1u^*},\ldots,l_{ku^*}) \in L,u=u^*$ と
-            $(u',l_{1u'},\ldots,l_{ku'})$ における全ての目的関数値が同値でない．
+            \item 任意の$(u^*,l_{u^*(1)},\ldots,l_{u^*(k)})\in L,u=u^*$に
+            $(u',l_{u'(1)},\ldots,l_{u'(k)})$が支配されない．
+            \item 任意の$(u^*,l_{u^*(1)},\ldots,l_{u^*(k)}) \in L,u=u^*$と
+            $(u',l_{u'(1)},\ldots,l_{u'(k)})$における全ての目的関数値が同値でない．
           \end{itemize}
-          \item[Step 2-3-1-3.] 任意の $(u'',l_{1u''},\ldots,l_{ku''})\in Lu=u''$
-          に対して $(u',l_{1u'},\ldots,l_{ku'})$ が
-          $(u'',l_{1u''},\ldots,l_{ku''})$ を支配しているとき，
-          $L \leftarrow L \setminus \{(u'',l_{1u''},\ldots,l_{ku''})\}$ とする．
+          \item[Step 2-3-1-3.] 任意の$(u'',l_{u''(1)},\ldots,l_{u''(k)})\in Lu=u''$
+          に対して$(u',l_{u'(1)},\ldots,l_{u'(k)})$が
+          $(u'',l_{u''(1)},\ldots,l_{u''(k)})$を支配しているとき，
+          $L \leftarrow L \setminus \{(u'',l_{u''(1)},\ldots,l_{u''(k)})\}$とする．
         \end{description}
       \end{description}
     \end{description}
@@ -958,14 +954,18 @@ $c_{12}=1,c_{23}=1$ のとき $c_{13}=1$ である．このとき，任意の辺
 上記の解法は更新によって新たな解を得た頂点を更新対象となる頂点集合に加えることによって，更新しなくて良い頂点を
 更新せずに済む．これにより，１回の全辺を緩める操作で更新対象となるのは最大で
 $\displaystyle \sum_{i=0}^{n-1} {}_{(n-1)}P_i$ つとなる問題を解決した．
-全体の探索における経路の更新回数に対する合計計算量を $O(n^{n+1})$ から $O(n^n)$ に削減した．
+生成される経路の数（解の数＋削除される経路の数）を$S$とすると，
+全体の探索における経路の更新回数に対する合計計算量を $\mathcal{O}(S*n)$ から $\mathcal{O}(S)$ に削減した．
 また，更新対象とする頂点が存在しなくなった時点で探索が終了するため全辺を緩めることを単に $|V|-1$ 回
 繰り返してしまうと膨大な計算時間がかかってしまうという問題を解決した．
 しかし，この解法にはまだ改善点がいくつか存在するためそれらの改善をしていく．
-この解法の問題点は２つある．１つ目はすでに更新済みである経路を更新対象にしているために無駄な更新が行われている点である．
+この解法の問題点は２つある．
+
+１つ目はすでに更新済みである経路を更新対象にしているために無駄な更新が行われている点である．
 頂点に対する解である経路は複数存在している．頂点 $v$ に対してすでに更新済みである経路を $a,b$ とし，他の頂点の更新により
 新しく得られた経路を $c,d$ とすると，次に頂点 $v$ の更新を行うとき経路 $c,d$ のみを更新対象とすれば良い．
 上記の解法では頂点に対する経路 $a,b,c,d$ すべてが更新対象となってしまうため経路 $a,b$ の無駄な更新が行われてしまう．
+
 ２つ目はパレート最適解の判定の際に比較対象となる経路を探索するのに多くの計算時間がかかってしまう点である．
 上記の解法では解となる経路を保存するラベルが１つのため比較対象となる経路を選択するためにすでに求めてある
 経路全てを探索する必要がある．全ての経路は最大で $\displaystyle \sum_{i=0}^{n-1} {}_{(n-1)}P_i$ つ
@@ -975,33 +975,38 @@ $\displaystyle \sum_{i=0}^{n-1} {}_{(n-1)}P_i$ つとなる問題を解決した
 \begin{figure}[htbp]
   \centering
   \caption{ベルマンフォード改良解法と従来のラベル比較}
-  \includegraphics[width=10.0cm]{fig/fig3.pdf}
+  \includegraphics[width=12.0cm]{fig/fig3.pdf}
 \end{figure}
 
 上記の解法の問題点を解決するために，従来研究で提案された完全多項式時間近似スキームによる解法と
 ラベル付けアルゴリズムによる解法を組み合わせ改良を加える．
+
 まず，完全多項式時間近似スキームによる解法で提案されたように，更新対象とする経路のラベルと更新対象としない経路のラベルを用意する
 ことによって無駄な更新を削減し効率化する．これにより経路 $c,d$ のみを更新対象とすることができるため
-経路 $a,b$ の無駄な更新を行わずにすむ．つぎに，ラベル付けアルゴリズムによる解法で提案されたように
+経路 $a,b$ の無駄な更新を行わずにすむ．
+
+つぎに，ラベル付けアルゴリズムによる解法で提案されたように
 頂点数だけラベルを用意し，各頂点毎の経路をそれぞれのラベルに記憶していく．
 従来のアルゴリズムでは１つのラベルから更新対象となる頂点に対する経路を探索し
 経路の更新を行なっていたが，１つのラベルには全ての頂点に対する経路が存在するため
 多くの経路に対して更新対象とするかの判定を行わなけらばならない．
+
 ラベル付けアルゴリズムによる解法により各頂点毎の経路を分けて保存しておくことが可能なので
 更新対象となる頂点に対する経路を選択するときに探索を行う必要がなくなり効率化になると考えられる．
-これにより，パレート解であるかの判定に要する計算量を $O(k*n^n)$ から $O(k*n^{n-1})$ に削減した．
+更新時の更新される経路の数（解の数＋削除される経路の数）を$L$，更新時の頂点$v\in V$に対する経路の数を$L_v$とすると，
+これにより，頂点$v$対するパレート解であるかの判定に要する計算量を $\mathcal{O}(k*L_v+L)$ から $\mathcal{O}(k*L_v)$ に削減した．
 
 
 \begin{figure}[htbp]
   \centering
   \caption{ラベルの統合（提案解法１のラベル）}
-  \includegraphics[width=10.0cm]{fig/fig4.pdf}
+  \includegraphics[width=11.0cm]{fig/fig4.pdf}
 \end{figure}
 
 完全多項式時間近似スキームによる解法とラベル付けアルゴリズムによる解法を組み合わせることにより
-無駄な更新を削減と経路を選択するための探索の削減を実現した．また，全体の探索における更新に対する計算量
-を $O(k*n^{2n+1})$ から $O(k*n^{2n-1})$ に削減した．これは図に示すようにいくつかのラベル
+無駄な更新を削減と経路を選択するための探索の削減を実現した．．これは図に示すようにいくつかのラベル
 に経路を分配することにより可能にしている．しかし，ラベルを複数作ってしまうとメモリを多く使ってしまう．
+
 この問題を解決するために任意の頂点に対する更新済みのラベルと更新対象のラベルの結合を考える．
 具体的には，更新済みラベルの後ろに更新対象とするラベルを結合し，更新対象とするラベルの先頭
 を記憶していく．通常，更新対象となる経路は後に更新済みの経路となり，新たな更新対象となる経路が発見される．
@@ -1014,36 +1019,27 @@ $\displaystyle \sum_{i=0}^{n-1} {}_{(n-1)}P_i$ つとなる問題を解決した
 \begin{quote}
   \textbf{記号}
   \begin{description}
-    \item[$k$：] 最適化目的の数
-    \item[$v \in V$ に対して]
-    \item[$L_v$：] 頂点 $v$ に対するラベル
-    \item[$M(L_v)$：] 頂点 $v$ に対するラベルにおいて，更新対象とその他の境界となる解
-    （ $M(L_v)$ が $L_v$ のi番目の解のとき，i+1番目以降の解は更新対象とする）
-    \item[$v \in V$，$j = 1 , \ldots , k$ に対して]
-    \item[$l_{jv}$：] 始点からノード $v$ に到達したときに生じる
-    第 $j$ 番目の目的関数における総コスト
-    \item[$e \in E$，$j = 1 , \ldots , k$ に対して]
-    \item[$e_{jw}$：] 辺 $e$ の第 $j$ 番目の目的関数におけるコスト
+    \item[$v \in V$に対して]
+    \item[$L_v$：] 頂点$v$に対するラベル
+    \item[$M(L_v)$：] 頂点$v$に対するラベルにおいて，更新対象とその他の境界となる経路
+    （ $M(L_v)$ が $L_v$ のi番目の解のとき，i+1番目以降の経路は更新対象とする）
   \end{description}
 \end{quote}
 
 \begin{quote}
   \textbf{アルゴリズム}
   \begin{description}
-    \item[入力：] グラフ $G=(V,E)$ ，始点 $s \in V$ ，最適化目的の数 $k$ ，
-    各辺の重みを返す関数 $w : E \to \mathbb{R}^k$
-    \item[出力：] $s$ から全ての頂点への最短経路となるパレート解の集合
-    \item[Step 1.] $\forall v \in V , L_v \leftarrow \emptyset$ ，
+    \item[Step 1.] $\forall v \in V , L_v \leftarrow \emptyset$，
     $L_s \leftarrow (s,0,\ldots,0)$
     \item[Step 2.] 更新ができなくなるまで以下の操作を行う．
     \begin{description}
-      \item[Step 2-1.] $\forall v \in V$ となる頂点 $v$ に対して以下の操作を行う．
+      \item[Step 2-1.] $\forall v \in V$となる頂点$v$に対して以下の操作を行う．
       \begin{description}
-        \item[Step 2-1-1.] $\forall u \in V$ となる頂点 $u$ に対して以下の操作を行う．
+        \item[Step 2-1-1.] $\forall u \in V$となる頂点$u$に対して以下の操作を行う．
         \begin{description}
-          \item[Step 2-1-1-1.] $L_v$ から $L_u$ に対しての更新を行う．
+          \item[Step 2-1-1-1.] $L_v$から$L_u$に対しての更新を行う．
         \end{description}
-        \item[Step 2-1-2.] $M(L_v)$ を $L_v$ の最後の解とする．
+        \item[Step 2-1-2.] $M(L_v)$を$L_v$の最後の解とする．
       \end{description}
     \end{description}
     \item[Step 3.] 全てのパレート解を出力
@@ -1051,30 +1047,30 @@ $\displaystyle \sum_{i=0}^{n-1} {}_{(n-1)}P_i$ つとなる問題を解決した
 \end{quote}
 
 \begin{quote}
-  \textbf{$L_v$ から $L_u$ に対しての更新}
+  \textbf{$L_v$から$L_u$に対しての更新}
   \begin{description}
-    \item[Step 1.] $L_v$，$L_u$ ，頂点 $v$ から頂点 $u$ への辺 $e$ を受け取る．
-    \item[Step 2.] $M(L_v)$ より後にある全ての解 $(v',l_{1v'},\ldots,l_{kv'}) \in L_v$
+    \item[Step 1.] $L_v$，$L_u$，頂点$v$から頂点$u$ への辺$e$を受け取る．
+    \item[Step 2.] $M(L_v)$より後にある全ての経路$(v',l_{v'(1)},\ldots,l_{v'(k)}) \in L_v$
     について以下の操作を行う．
     \begin{description}
-      \item[Step 2-1.] 辺 $e$ の重みベクトルを
-      $\vec{e} = (e_{1w},\ldots,e_{kw})$ とし，
-      $(u',l_{1u'},\ldots,l_{ku'}) \leftarrow
-      (u',l_{1v}+e_{1w},\ldots,l_{kv}+e_{kw})$ とする．
-      \item[Step 2-2.] 以下の条件を満たすとき，
-      $L_u \leftarrow L_u \cup \{(u',l_{1u'},\ldots,l_{ku'})\}$ とする．
+      \item[Step 2-1.] 辺$e$の重みベクトルを
+      $\vec{e} = (e_{(1)},\ldots,e_{(k)})$とし，
+      $(u',l_{u'(1)},\ldots,l_{u'(k)}) \leftarrow
+      (u',l_{v(1)}+e_{(1)},\ldots,l_{v(k)}+e_{(k)})$とする．
+      \item[Step 2-2.] 以下の条件を満たすとき
+      $L_u \leftarrow L_u \cup \{(u',l_{u'(1)},\ldots,l_{u'(k)})\}$とする．
       \begin{itemize}
-        \item 任意の $(u^*,l_{1u^*},\ldots,l_{ku^*})\in L_u$ に
-        $(u',l_{1u'},\ldots,l_{ku'})$ が支配されない．
-        \item 任意の$(u^*,l_{1u^*},\ldots,l_{ku^*}) \in L_u$ と
-        $(u',l_{1u'},\ldots,l_{ku'})$ における全ての目的関数値が同値でない．
+        \item 任意の$(u^*,l_{u^*(1)},\ldots,l_{u^*(k)})\in L_u$に
+        $(u',l_{u'(1)},\ldots,l_{u'(k)})$が支配されない．
+        \item 任意の$(u^*,l_{u^*(1)},\ldots,l_{u^*(k)}) \in L_u$と
+        $(u',l_{u'(1)},\ldots,l_{u'(k)})$における全ての目的関数値が同値でない．
       \end{itemize}
-      \item[Step 2-3.] 任意の $(u'',l_{1u''},\ldots,l_{ku''})\in L_u$
-      に対して $(u',l_{1u'},\ldots,l_{ku'})$ が
-      $(u'',l_{1u''},\ldots,l_{ku''})$ を支配しているとき
-      $L_u \leftarrow L_u \setminus \{(u'',l_{1u''},\ldots,l_{ku''})\}$ とする．
-      $(u'',l_{1u''},\ldots,l_{ku''})$ の前の解が $M(L_u)$ の場合，
-      $(u'',l_{1u''},\ldots,l_{ku''})$ の次の解を $M(L_u)$ の界とする．
+      \item[Step 2-3.] 任意の$(u'',l_{u''(1)},\ldots,l_{u''(k)})\in L_u$
+      に対して$(u',l_{u'(1)},\ldots,l_{u'(k)})$が
+      $(u'',l_{u''(1)},\ldots,l_{u''(k)})$を支配しているとき
+      $L_u \leftarrow L_u \setminus \{(u'',l_{u''(1)},\ldots,l_{u''(k)})\}$とする．
+      $(u'',l_{u''(1)},\ldots,l_{u''(k)})$の前の経路が $M(L_u)$の場合，
+      $(u'',l_{u''(1)},\ldots,l_{u''(k)})$の次の経路を $M(L_u)$の界とする．
     \end{description}
   \end{description}
 \end{quote}
@@ -1084,9 +1080,12 @@ $\displaystyle \sum_{i=0}^{n-1} {}_{(n-1)}P_i$ つとなる問題を解決した
 
 問題の分析で示した通り，多目的最短経路問題はインスタンスのグラフについて辺の本数が多いほど
 パレート解の数は多くなり，問題は難しくなる．つまり，インスタンスのグラフが完全グラフのとき
-問題は最も難しくなる．一般的に最短経路問題では，インスタンスの重みが非負であるグラフについて，
+問題は最も難しくなる．
+
+一般的に最短経路問題では，インスタンスの重みが非負であるグラフについて，
 通る頂点数が少ない経路が解になる確率が高い．また，通る頂点数が多い経路が解になる確率は低い
 （一時解となっても後に他の経路に支配され削除される可能性が高い）．
+
 最適化目的の数が２，重みの幅が $w$ の場合の始点 $s$ から終点 $t$ への最短経路を求める．
 頂点 $v$ を経由した $s$ から $t$ への経路（経由頂点数が１の経路）を $(s,v,t)$ と表す．
 頂点 $v_1,\ldots,v_10$ を経由した $s$ から $t$ への経路（経由頂点数が１０の経路）
@@ -1120,12 +1119,13 @@ $[0,11w]$ の値が $[0,2w]$ の値となるとなる確率は2/11であるた�
 \begin{figure}[htbp]
   \centering
   \caption{提案１と提案解法２のラベル比較}
-  \includegraphics[width=10.0cm]{fig/fig8.pdf}
+  \includegraphics[width=12.0cm]{fig/fig8.pdf}
 \end{figure}
 
 非効率である提案解法１の探索順序の改善方法を考える．すでに示した通り提案解法１の探索順序では経由する
 頂点が多い経路が経由する頂点が少ない経路よりも先に見つかってしまい１度ラベルに含まれてしまう．
 つまり，経由する頂点が少ない経路が経由する頂点が多い経路よりも先に見つかるようにしたい．
+
 まず，提案解法１でそのようになる原因を考える．提案解法１の探索順序では１回の更新で全ての頂点に存在する
 更新対象となる経路を更新するが，更新する頂点の順序によって経由する頂点が多い経路が更新されてしまう．
 例えば完全グラフにおいて頂点 $a,b$ を更新するとき， $a$ を先に更新したとすると $b$ には $a$ に対する経路を
@@ -1144,7 +1144,9 @@ $[0,11w]$ の値が $[0,2w]$ の値となるとなる確率は2/11であるた�
 この探索方法により経由する頂点が多い経路が経由する頂点が少ない経路よりも先に発見されることはなくなり，
 １度解となった経路が後に削除される確率は低くなったので全体の経路に対する更新は少なくなると考えられる．
 しかし，１回の更新内で得られた経路（経由する頂点数が多い経路）を別で保存し，全頂点に対する更新が終わった時点で
-更新対象となる経路とすることにより１回の更新に要する実装時間は長くなる．提案解法１では更新対象となる経路を
+更新対象となる経路とすることにより１回の更新に要する実装時間は長くなる．
+
+提案解法１では更新対象となる経路を
 更新対象としない経路に移動させるだけだったが，提案解法２ではそれらに加えて更新内で得られた経路を更新対象とする経路
 に移動させるという作業が増える．そのため，提案解法２が提案解法１に比べて一定以上全体の経路に対する更新は少なくなら
 なければ非効率となってしまう．つまり，提案解法２が提案解法１に比べて一定以上削除される解を減らさなければならない．
@@ -1153,86 +1155,77 @@ $[0,11w]$ の値が $[0,2w]$ の値となるとなる確率は2/11であるた�
 \begin{quote}
   \textbf{記号}
   \begin{description}
-    \item[$k$：] 最適化目的の数
     \item[$v \in V$に対して]
-    \item[$L_{vx}$：] 頂点 $v$ に対する，更新対象としないラベル
-    \item[$L_{vy}$：] 頂点 $v$ に対する，更新対象とするラベル
-    \item[$L_{vz}$：] 頂点 $v$ に対する，次回探索で更新対象とするラベル
-    \item[$v \in V$，$j = 1 , \ldots , k$ に対して]
-    \item[$l_{jv}$：] 始点からノード $v$ に到達したときに生じる
-    第 $j$ 番目の目的関数における総コスト
-    \item[$e \in E$，$j = 1 , \ldots , k$ に対して]
-    \item[$e_{jw}$：] 辺 $e$ の第 $j$ 番目の目的関数におけるコスト
+    \item[$L_{vx}$：] 頂点$v$に対する，更新対象としないラベル
+    \item[$L_{vy}$：] 頂点$v$に対する，更新対象とするラベル
+    \item[$L_{vz}$：] 頂点$v$に対する，次回探索で更新対象とするラベル
   \end{description}
 \end{quote}
 
 \begin{quote}
   \textbf{アルゴリズム}
   \begin{description}
-    \item[入力：] グラフ $G=(V,E)$ ，始点 $s \in V$ ，最適化目的の数 $k$ ，
-    各辺の重みを返す関数 $w : E \to \mathbb{R}^k$
-    \item[出力：] $s$ から全ての頂点への最短経路となるパレート解の集合
-    \item[Step 1.] $\forall v \in V , L_v \leftarrow \emptyset$ ，
+    \item[Step 1.] $\forall v \in V , L_v \leftarrow \emptyset$，
     $L_{sy} \leftarrow (s,0,\ldots,0)$
     \item[Step 2.] 更新ができなくなるまで以下の操作を行う．
     \begin{description}
-      \item[Step 2-1.] $\forall v \in V$ となる頂点 $v$ に対して以下の操作を行う．
+      \item[Step 2-1.] $\forall v \in V$となる頂点$v$に対して以下の操作を行う．
       \begin{description}
-        \item[Step 2-1-1.] $\forall u \in V$ となる頂点 $u$ に対して以下の操作を行う．
+        \item[Step 2-1-1.] $\forall u \in V$となる頂点$u$に対して以下の操作を行う．
         \begin{description}
-          \item[Step 2-1-1-1.] $L_{vy}$ から$ L_u$ に対しての更新を行う．
+          \item[Step 2-1-1-1.] $L_{vy}$から$L_u$に対しての更新を行う．
         \end{description}
       \end{description}
-      \item[Step 2-2.] $\forall v \in V$ に対して
-      $L_{vx},L_{vy},L_{vz}$ の更新を行う．
+      \item[Step 2-2.] $\forall v \in V$に対して
+      $L_{vx},L_{vy},L_{vz}$の更新を行う．
     \end{description}
     \item[Step 3.] 全てのパレート解を出力
   \end{description}
 \end{quote}
 
 \begin{quote}
-  \textbf{ $L_{vy}$ から $L_u$ に対しての更新}
+  \textbf{$L_{vy}$から$L_u$に対しての更新}
   \begin{description}
-    \item[Step 1.] $L_{vy}$ ， $L_u$ ， 頂点 $v$ から頂点 $u$ への辺 $e$ を受け取る．
-    \item[Step 2.] $\forall (v',l_{1v'},\ldots,l_{kv'}) ,
-    (v',l_{1v'},\ldots,l_{kv'}) \in L_{vy}$ について以下の操作を行う．
+    \item[Step 1.] $L_{vy}$，$L_u$，頂点$v$から頂点$u$への辺$e$を受け取る．
+    \item[Step 2.] $\forall (v',l_{v'(1)},\ldots,l_{v'(k)}),
+    (v',l_{v'(1)},\ldots,l_{v'(k)}) \in L_{vy}$について以下の操作を行う．
     \begin{description}
-      \item[Step 2-1.] 辺 $e$ の重みベクトルを
-      $\vec{e} = (e_{1w},\ldots,e_{kw})$ とし，
-      $(u',l_{1u'},\ldots,l_{ku'}) \leftarrow
-      (u',l_{1v}+e_{1w},\ldots,l_{kv}+e_{kw})$ とする．
+      \item[Step 2-1.] 辺$e$の重みベクトルを
+      $\vec{e} = (e_{(1)},\ldots,e_{(k)})$とし，
+      $(u',l_{u'(1)},\ldots,l_{u'(k)}) \leftarrow
+      (u',l_{v(1)}+e_{(1)},\ldots,l_{v(k)}+e_{(k)})$とする．
       \item[Step 2-2.] 以下の条件を満たすとき，
-      $L_{uz} \leftarrow L_{uz} \cup \{(u',l_{1u'},\ldots,l_{ku'})\}$ とする．
+      $L_{uz} \leftarrow L_{uz} \cup \{(u',l_{u'(1)},\ldots,l_{u'(k)})\}$とする．
       \begin{itemize}
-        \item 任意の $(u^*,l_{1u^*},\ldots,l_{ku^*})\in \{L_{ux} \cup L_{uy} \cup L_{uz}\}$ に
-        $(u',l_{1u'},\ldots,l_{ku'})$ が支配されない．
-        \item 任意の $(u^*,l_{1u^*},\ldots,l_{ku^*}) \in \{L_{ux} \cup L_{uy} \cup L_{uz}\}$ と
-        $(u',l_{1u'},\ldots,l_{ku'})$ における全ての目的関数値が同値でない．
+        \item 任意の $(u^*,l_{u^*(1)},\ldots,l_{u^*(k)})\in \{L_{ux} \cup L_{uy} \cup L_{uz}\}$に
+        $(u',l_{u'(1)},\ldots,l_{u'(k)})$ が支配されない．
+        \item 任意の $(u^*,l_{u^*(1)},\ldots,l_{u^*(k)}) \in \{L_{ux} \cup L_{uy} \cup L_{uz}\}$と
+        $(u',l_{u'(1)},\ldots,l_{u'(k)})$ における全ての目的関数値が同値でない．
       \end{itemize}
-      \item[Step 2-3.] 任意の $(u'',l_{1u''},\ldots,l_{ku''})\in L_{ux}$
-      に対して $(u',l_{1u'},\ldots,l_{ku'})$ が
-      $(u'',l_{1u''},\ldots,l_{ku''})$ を支配しているとき
-      $L_{ux} \leftarrow L_{ux} \setminus \{(u'',l_{1u''},\ldots,l_{ku''})\}$ とする．
-      \item[Step 2-4.] 任意の $(u'',l_{1u''},\ldots,l_{ku''})\in L_{uy}$
-      に対して $(u',l_{1u'},\ldots,l_{ku'})$ が
-      $(u'',l_{1u''},\ldots,l_{ku''})$ を支配しているとき
-      $L_{uy} \leftarrow L_{uy} \setminus \{(u'',l_{1u''},\ldots,l_{ku''})\}$ とする．
-      \item[Step 2-5.] 任意の $(u'',l_{1u''},\ldots,l_{ku''})\in L_{uz}$
-      に対して $(u',l_{1u'},\ldots,l_{ku'})$ が
-      $(u'',l_{1u''},\ldots,l_{ku''})$ を支配しているとき
-      $L_{uz} \leftarrow L_{uz} \setminus \{(u'',l_{1u''},\ldots,l_{ku''})\}$ とする．
+      \item[Step 2-3.] 任意の$(u'',l_{u''(1)},\ldots,l_{u''(k)})\in L_{ux}$
+      に対して$(u',l_{u'(1)},\ldots,l_{u'(k)})$が
+      $(u'',l_{u''(1)},\ldots,l_{u''(k)})$を支配しているとき
+      $L_{ux} \leftarrow L_{ux} \setminus \{(u'',l_{u''(1)},\ldots,l_{u''(k)})\}$とする．
+      \item[Step 2-4.] 任意の$(u'',l_{u''(1)},\ldots,l_{u''(k)})\in L_{uy}$
+      に対して$(u',l_{u'(1)},\ldots,l_{u'(k)})$が
+      $(u'',l_{u''(1)},\ldots,l_{u''(k)})$を支配しているとき
+      $L_{uy} \leftarrow L_{uy} \setminus \{(u'',l_{u''(1)},\ldots,l_{u''(k)})\}$とする．
+      \item[Step 2-5.] 任意の$(u'',l_{u''(1)},\ldots,l_{u''(k)})\in L_{uz}$
+      に対して$(u',l_{u'(1)},\ldots,l_{u'(k)})$が
+      $(u'',l_{u''(1)},\ldots,l_{u''(k)})$を支配しているとき
+      $L_{uz} \leftarrow L_{uz} \setminus \{(u'',l_{u''(1)},\ldots,l_{u''(k)})\}$とする．
     \end{description}
   \end{description}
 \end{quote}
 
 \begin{quote}
-  \textbf{ $L_{vx},L_{vy},L_{vz}$ の更新}
+  \textbf{$L_{vx},L_{vy},L_{vz}$の更新}
   \begin{description}
-    \item[Step 1.] $L_{vx},L_{vy},L_{vz}$ を受け取る．
-    \item[Step 2.] $L_{vx} = L_{vx} \cup L_{vy}$ とし，
-    $L_{vy} = \{ \emptyset \}$ とする．
-    \item[Step 3.] $L_{vy} \leftarrow L_{vz}$ とし，
-    $L_{vz} = \{ \emptyset \}$ とする．
+    \item[Step 1.] $L_{vx},L_{vy},L_{vz}$を受け取る．
+    \item[Step 2.] $L_{vx} = L_{vx} \cup L_{vy}$とし，
+    $L_{vy} = \{ \emptyset \}$とする．
+    \item[Step 3.] $L_{vy} \leftarrow L_{vz}$とし，
+    $L_{vz} = \{ \emptyset \}$とする．
   \end{description}
 \end{quote}
 
@@ -1243,6 +1236,7 @@ $[0,11w]$ の値が $[0,2w]$ の値となるとなる確率は2/11であるた�
 これは負の閉路を何度も通過することによって重みを更新し続けるためである．しかし，多目的最短経路問題の場合，
 目的関数が複数存在するので１つの目的関数において負の閉路が存在する場合でも，他の目的関数による最適化をすることで
 解を求めることができる．よって，本研究では負の閉路が存在する目的関数を考慮しない解を求める．
+
 単目的最短経路問題におけるベルマンフォード法では， $|V|$ 回目の更新を行うことによって負の閉路が存在するか
 の判定をし報告を行なっていた．しかし，本研究では負の閉路が存在するとき負の閉路が存在しない目的関数に対しての
 解を求めるため，どの目的関数において負の閉路が存在しているのかを確かめる必要がある．また，負の閉路が存在するとき
@@ -1263,6 +1257,7 @@ $[0,11w]$ の値が $[0,2w]$ の値となるとなる確率は2/11であるた�
 探索途中で負の閉路を検出する方法を提案する．探索途中で負の閉路を検出することにより $|V|$ 回目の更新を行う必要がなくなり，
  $|V|$ 回目の更新を行うまでにかかる多くの実装時間が削減される．探索途中で負の閉路を検出する方法としては，提案解法２における
 Step 2-1-1-1で負の閉路が存在するかの判定をし，１回の全体に対する更新が終わった時点で負の閉路が存在する場合，その目的関数を削除する．
+
 負の閉路が存在するかの判定は解となった経路が閉路となっているかで判定する．経路が閉路となっている場合，同じ頂点を２回通っている
 ということである．同じ頂点を２回通っている経路が解となるとき，その頂点を１回通った経路に２回通った経路が支配されていない状態
 なので，任意の目的関数において２回通った経路の値が１回通った経路の値よりも低くなっている．２回通った経路の値が１回通った経路の値
@@ -1311,8 +1306,8 @@ Step 1 の前で負の閉路が存在するかの判定をし，負の閉路が�
   \textbf{目的関数 $k_1$ の削除}
   \begin{description}
     \item[Step 1.] $k_1,E,L$ （全てのラベル）を受け取る．
-    \item[Step 2.] $\forall e \in E$ について $\vec{e}={f_1,\ldots,f_k}$ とし， $k_1$ に対応する値が
-    $f_1$ のとき， $f_1=0$ とする．
+    \item[Step 2.] $\forall e \in E$ について $\vec{e}={e_{(1)},\ldots,e_{(k)}}$ とし， $k_1$ に対応する値が
+    $e_{(1)}$ のとき， $e_{(1)}=0$ とする．
   \end{description}
 \end{quote}
 
@@ -1323,9 +1318,11 @@ Step 1 の前で負の閉路が存在するかの判定をし，負の閉路が�
 前に提案した負の閉路探索を行なった後探索をする方法を改良する．負の閉路探索を行なった後探索をする方法では
 探索した経路は保存せずに最初から探索を行なっていた．しかし，負の閉路で探索した解は少しの工夫で必ずパレート
 最適解に含まれるため，負の閉路探索結果で求めた解を利用して探索をする方法を提案する．
+
 最終的にパレート最適解でない経路を利用して探索してしまうと，求めた解を利用して探索して得られた経路が削除
 されてしまうため無駄な探索となってしまう．よって，負の閉路探索結果で求めた解を利用して探索をする場合
 確実にパレート最適解となる解を求めて探索をしなければならない．
+
 各目的関数に対して負の閉路探索で得た解はその目的関数の値に対して低くなる経路は存在しない．しかし，
 その目的関数の値が同じで他の目的関数が得た解より低い場合，得た解は支配されてしまいパレート最適解ではなくなってしまう．
 そのため，同じ値である経路が得られた場合は他の目的関数の比較をし，優位な方を選択する必要がある．
@@ -1397,6 +1394,7 @@ ArrayList は配列を利用したリスト構造である．ArrayList は通常
 提案解法１に対して，１つの頂点に対して１つの ArrayList を使用する．
 １つの ArrayList は１つの頂点に対する経路を保存しておき，更新対象としない経路と更新対象とする経路の界を記憶しておくことで
 更新対象のする経路の区別ができる．提案解法２に対して，１つの頂点に３つの ArrayList を使用する．
+
 １つの頂点に対する各 ArrayList は更新対象としないもの，更新対象とするもの，次回の更新で更新経路対象にするものとする．
 提案解法１では更新対象としない経路と更新対象とする経路の界を移動させるだけで更新対象とするものから更新対象としないものへの
 経路の移動が可能であるが，提案解法１では更新対象とする経路を１つずつ更新対象としない経路に移動させるため時間がかかる．
@@ -1522,8 +1520,8 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   多目的最短経路問題に対する提案解法１に用いた，完全多項式時間近似スキームに基づいた
   解の格納方法による計算時間の比較．
 
-  図4.10より，頂点数 1000 ，重みの範囲 1000 のとき，改良前の計算時間は， 139,240 ms，改良後の計 算時間は， 14,016 ms であった．
-  つまり，完全多項式時間近似スキームに基づいた解の格納方法の改良により，約 90\% の計算時間の削減を可能にした．
+  図4.10より，頂点数 1000 ，重みの範囲 1000 のとき，改良前の計算時間は， 172,615 ms，改良後の計 算時間は， 20,307 ms であった．
+  つまり，完全多項式時間近似スキームに基づいた解の格納方法の改良により，約 88\% の計算時間の削減を可能にした．
   頂点数の増加に伴い，格納方法による改良前と改良後の計算時間の差は拡大している．
   そのため，頂点数をさらに増やすことで削減率も上がると考えられる．
 
@@ -1533,7 +1531,7 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \centering
   \includegraphics[height=7.0cm , width=15.0cm]{fig/fig13.pdf}
   \caption{多目的最短経路問題に対する提案解法１に用いた，完全多項式時間近似スキームに基づいた
-  解の格納方法による計算時間の比較．表　　参照}
+  解の格納方法による計算時間の比較．表 A1 参照}
 \end{figure}
 
 
@@ -1553,7 +1551,7 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \centering
   \includegraphics[height=7.0cm , width=15.0cm]{fig/fig14.pdf}
   \caption{多目的最短経路問題に対する提案解法１に用いた，ラベル付けアルゴリズムに基づいた
-  解の格納方法による計算時間の比較．表　　参照}
+  解の格納方法による計算時間の比較．表 A2 参照}
 \end{figure}
 
 
@@ -1561,8 +1559,8 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \item[尺度３:]
   多目的最短経路問題に対する提案解法２に用いた，動的計画法に基づいた探索順序による計算時間の比較．
 
-  図4.12より，頂点数 1000 ，重みの範囲 1000 のとき，改良前の計算時間は， 14,016 ms，改良後の計算時間は， 8,900 ms であった．
-  つまり，探索順序の改良により，約 36\% の計算時間の削減を可能にした．
+  図4.12より，頂点数 1000 ，重みの範囲 1000 のとき，改良前の計算時間は， 20,307 ms，改良後の計算時間は， 11,766 ms であった．
+  つまり，探索順序の改良により，約 42\% の計算時間の削減を可能にした．
   この結果に対する考察を行う．提案解法２の場合，探索順序を変更することによって無駄な探索を減らし探索にかかる時間を削減しているが，
   探索順序を変更するためにラベルを多く作っているため全体に対する探索の終了後にラベル内の解を移動させる操作が多くなる．
   （提案解法１では，更新対象とするもの$\rightarrow$更新対象としないもの．提案解法２では，更新対象とするもの$\rightarrow$更新対象としないもの，
@@ -1581,7 +1579,7 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \centering
   \includegraphics[height=7.0cm , width=15.0cm]{fig/fig15.pdf}
   \caption{多目的最短経路問題に対する提案解法２に用いた，動的計画法に基づいた
-  探索順序による計算時間の比較．表　　参照}
+  探索順序による計算時間の比較．表 A3 参照}
 \end{figure}
 
 
@@ -1601,7 +1599,7 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   結果より，目的関数の相関係数の値が約 0.90 以上のとき，無駄な探索をしないことによる時間の削減＜
   ラベル内の解を移動させる操作にかかる時間となっていると考えられる．
   図4.13は頂点に入ってくる辺の重みベクトルに対しての相関を求めているが，頂点から出ていく辺の重みベクトルに対しての相関
-  でも同じことが言える．頂点に入ってくる辺の重みベクトルに対しての相関と頂点から出ていく辺の重みベクトルに対しての相関
+  でも同じことが言える．（表 A7 参照）頂点に入ってくる辺の重みベクトルに対しての相関と頂点から出ていく辺の重みベクトルに対しての相関
   の間には関係が存在しないため，両方の相関が低い場合のみ，無駄な探索をしないことによる時間の削減＞
   ラベル内の解を移動させる操作にかかる時間となる．
 
@@ -1610,7 +1608,7 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
 \begin{figure}[htbp]
   \centering
   \includegraphics[height=7.0cm , width=15.0cm]{fig/fig18.pdf}
-  \caption{多目的最短経路問題に対する提案解法１と提案解法２において，各目的関数の相関係数による計算時間の比較．表　　参照}
+  \caption{多目的最短経路問題に対する提案解法１と提案解法２において，各目的関数の相関係数による計算時間の比較．表 A6 参照}
 \end{figure}
 
 
@@ -1628,7 +1626,7 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \item[尺度１:]
   負のサイクルが存在しない多目的最短経路問題に対する負の重みを考慮した解法による計算時間の比較．
 
-  頂点数 1000 ，重みの範囲 1000 のとき，負の閉路を先に検出したときの計算時間は， 12,921 ms，探索途中で負の閉路を検出したときの
+  表 A8 より，頂点数 1000 ，重みの範囲 1000 のとき，負の閉路を先に検出したときの計算時間は， 12,921 ms，探索途中で負の閉路を検出したときの
   計算時間は， 12,683 ms，負の閉路検出で得られた解を基に探索したときの計算時間は， 28,756 ms であった．
   つまり，負の閉路を先に検出した場合と探索途中で負の閉路を検出した場合の計算時間がもっとも短いということになる．
   この結果に対する考察を行う．負の閉路を先に検出した場合と探索途中で負の閉路を検出した場合，
@@ -1646,17 +1644,22 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \item[尺度２:]
   負のサイクルが存在する多目的最短経路問題に対する負の重みを考慮した解法による計算時間の比較．
 
-  % 図より，頂点数1000，重みの範囲1000のとき，負の閉路を先に検出したときの計算時間は，12,921 ms，探索途中で負の閉路を検出したときの
-  % 計算時間は，12,683 ms，負の閉路検出で得られた解を基に探索したときの計算時間は，28,756 ms であった．
-  % つまり，負の閉路を先に検出した場合と探索途中で負の閉路を検出した場合の計算時間がもっとも短いということになる．
-  % この結果に対する考察を行う．負の閉路を先に検出した場合と探索途中で負の閉路を検出した場合，
-  % 負の閉路検出に多少の時間はかかるが探索順序は提案解法２と同じになる．
-  % しかし，負の閉路検出で得られた解を基に探索した場合の探索順序は提案解法２と異なる．
-  % これは，探索開始時の更新対象となる解が多く存在しているためである．
-  % 負の閉路検出で得られた解は経由する頂点が複数であるpathであるため，負の閉路検出で得られた解を基にして
-  % 探索したときに得られる解は後に他の解に支配され削除される可能性が高い．そのため，非効率であると考えられる．
-  % 頂点数の増加に伴い，格納方法による改良前と改良後の計算時間の差は拡大している．
-  % そのため，頂点数をさらに増やすことでそれぞれに対する効率の差が大きくなると考えられる．
+  表 A9 より，頂点数1000，重みの範囲1000のとき，負の閉路を先に検出したときの計算時間は，2,029 ms，探索途中で負の閉路を検出したときの
+  計算時間は，1,569 ms，負の閉路検出で得られた解を基に探索したときの計算時間は，2,898 ms であった．
+  つまり，探索途中で負の閉路を検出した場合の計算時間がもっとも短いということになる．
+  この結果に対する考察を行う．負の閉路を先に検出した場合と探索途中で負の閉路を検出した場合，
+  負の閉路検出に多少の時間はかかるが探索順序は提案解法２と同じになる．
+  しかし，負の閉路検出で得られた解を基に探索した場合の探索順序は提案解法２と異なる．
+  これは，探索開始時の更新対象となる解が多く存在しているためである．
+  負の閉路検出で得られた解は経由する頂点が複数であるpathであるため，負の閉路検出で得られた解を基にして
+  探索したときに得られる解は後に他の解に支配され削除される可能性が高い．そのため，非効率であると考えられる．
+  また，今回の実験ではすぐに負の閉路が見つかる場合のため探索途中で負の閉路を検出したとき最短で２回目の探索で負の閉路を発見できる．
+  負の閉路を先に検出した場合はそれぞれの目的関数に対して$\mathcal{O}(VE)$の計算時間がかかるため時間がかかる．
+  頂点数の増加に伴い，格納方法による改良前と改良後の計算時間の差は拡大している．
+  そのため，頂点数をさらに増やすことでそれぞれに対する効率の差が大きくなると考えられる．
+  すぐに負の閉路が見つからない場合，探索途中で負の閉路を検出したときの方が負の閉路を先に検出した場合よりも
+  多くの計算時間を必要とし，負の閉路発見後も目的関数の削除におけるステップ数が多いため，負の閉路を先に検出した方が
+  効率的になると考えられる．
 
 \end{description}
 
@@ -1673,7 +1676,7 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \item[尺度１:]
   多目的最短経路問題に対する提案解法２に用いた，リスト構造による計算時間の比較．
 
-  図より，頂点数 500 ，重みの範囲 500 のとき， ArrayList を使用したときの計算時間は， 2,913 ms，配列を用いた双方向リストの
+  表 A10 より，頂点数 500 ，重みの範囲 500 のとき， ArrayList を使用したときの計算時間は， 2,913 ms，配列を用いた双方向リストの
   計算時間は， 2,037 ms， class を用いた双方向リストの計算時間は， 1,789 ms であった．
   つまり， class を用いた双方向リストの計算時間がもっとも短いということになる．
   この結果に対する考察を行う．ArrayList を使用した場合，双方向リストは使用できないため経路の追加/削除，ラベルからラベルへの
@@ -1692,7 +1695,7 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \item[尺度２:]
   多目的最短経路問題に対する提案解法２に用いた，更新対象による計算時間の比較．
 
-  図より，頂点数 500 ，重みの範囲 500 のとき，始点を更新対象としたときの計算時間は，
+  表 A11 より，頂点数 500 ，重みの範囲 500 のとき，始点を更新対象としたときの計算時間は，
   終点を更新対象としたときの計算時間は， 1,789 ms であった．
   つまり，終点を更新対象としたときの計算時間が始点を更新対象としたときの計算時間より短いということになる．
   この結果に対する考察を行う．
@@ -1721,14 +1724,17 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   格納されているデータは経路のため，更新対象や各目的関数における比較は経路に対して行われる．
   そこで，必要な経路を発見しやすいデータ構造を提案した．
   提案したデータ構造により，頂点数 $n$ ，最適化目的の数 $k$ のとき，次の成果が得られた．
-  パレート解であるかの判定に要する計算量を $O(k*n^n)$ から $O(k*n^{n-1})$ に削減し，計算時間を最大 99\% 削減した．
-  全体の探索における経路の更新回数に対する合計計算量を $O(n^{n+1})$ から $O(n^n)$ に削減し，計算時間を最大 90\% 削減した．
-  経由する頂点数が少ない経路から順に探索されるよう探索順序の指定を行なった．
+
+  頂点$v$への1つの経路のパレート解であるかの判定に要する計算量を $\mathcal{O}(k*L_v+L)$ から $\mathcal{O}(k*L_v)$
+  に削減し，計算時間を最大 88\% 削減した．
+  （最適化目的の数 $k$，更新時の全体のラベル$L$，更新時の$v$のラベル$L_v$）
+  更新回数に対する合計計算量を $\mathcal{O}(n*S)$ から $\mathcal{O}(S)$ に削減し，計算時間を最大 99\% 削減した．
+  （生成された経路の数$S$，頂点数$n$）
   一般に経由する頂点数が少ない経路のほうが最短経路になりやすいため，探索順序の変更により
-  無駄な更新が行われる回数を削減し，計算時間を最大 36\% 削減した．
+  無駄な更新が行われる回数を削減し，計算時間を最大 42\% 削減した．
 
   以上の改良より，従来研究のもっとも実装時間の短い解法と比較した結果，
-  同じインスタンスに対して計算時間を最大 90\% 削減した．
+  同じインスタンスに対して計算時間を最大 93\% 削減した．
 \end{description}
 
 \begin{description}
@@ -1745,7 +1751,9 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
   \item[まとめ:]
   本研究では最適化目的の数＝３である単一始点最短経路問題に対する解法を提案した．
   しかし，最適化目的の数が３より多い場合の検証は行えておらず全点対最短経路問題に対する
-  解法は提案できていない．
+  解法は提案できていない．また，解法全体の評価はされていないが
+  実装時間はインスタンスの大きさ，解の大きさによって変化すると考えられるため，
+  それらの要素と実装時間の上限にどのような関係があるか求めたい．
 \end{description}
 
 \section{今後の課題}
@@ -1774,54 +1782,356 @@ classを用いた双方向循環リストの場合，解（経路）が発見さ
 
 \end{description}
 
+\begin{description}
+  \item[課題３:]
+  計算時間の評価．
+
+  本研究では，１つの計算機での実装を行うための解法を提案し，一部ののステップにおいての計算時間を評価し，
+  実装でも優位性を確かめた．しかし，解法全体の評価はされていない．
+  実装時間はインスタンスの大きさ，解の大きさによって変化すると考えられるため，
+  それらの要素と実装時間の上限にどのような関係があるか求めたい．
+  この関係を求めることにより，実装前にどれだけの時間がかかるかの予測や，
+  実装時にどれだけ効率的であるかを求めることができると考えられる．
+  また，一部ののステップにおいての計算時間を評価は指数時間となっているため，多項式時間での評価や，
+  次数が低くなるような評価をしたい．
+
+\end{description}
+
 
 \bibliographystyle{splncs03}
 \addcontentsline{toc}{chapter}{\bibname}
 \bibliography{thesis_nakano}
 \appendix
 
-
 \chapter{多目的最短経路問題に対する解法の実験結果}
-% \begin{table}[h]
-%   \centering
-%   \caption{CI安定集団構造構成の実験結果(94.5万回)}
-%   {\small
-%   \begin{tabular}{|c|c|c|c|c|} \hline
-%     プレイヤー数 & 逸脱回数 & 平均 & 最小逸脱回数 & 最大逸脱回数 \\ \hline
-%     n=10  & 2,727,254 & 2.886 & 0 & 12 \\ \hline
-%     n=20  & 6,461,477 & 6.838 & 0 & 21 \\ \hline
-%     n=30  & 10,224,722 & 10.820 & 0 & 32 \\ \hline
-%     n=40  & 13,950,718 & 14.763 & 2 & 41 \\ \hline
-%     n=50  & 17,608,330 & 18.633 & 3 & 52 \\ \hline
-%     n=60  & 21,209,044 & 22.443 & 5 & 63 \\ \hline
-%     n=70  & 24,764,379 & 26.206 & 7 & 67 \\ \hline
-%     n=80  & 28,269,979 & 29.915 & 9 & 77 \\ \hline
-%     n=90  & 31,734,205 & 33.581 & 10 & 84 \\ \hline
-%     n=100 & 35,159,676 & 37.206 & 12 & 91 \\ \hline
-%     n=110 & 38,549,466 & 40.793 & 13 & 99 \\ \hline
-%     n=120 & 41,919,499 & 44.359 & 13 & 103 \\ \hline
-%     n=130 & 45,241,468 & 47,875 & 16 & 105 \\ \hline
-%     n=140 & 48,546,345 & 51.372 & 16 & 113 \\ \hline
-%     n=150 & 51,829,043 & 54.846 & 20 & 118 \\ \hline
-%     n=160 & 55,092,815 & 58.299 & 20 & 125 \\ \hline
-%     n=170 & 58,342,060 & 61.738 & 21 & 129 \\ \hline
-%     n=180 & 61,571,985 & 65.156 & 25 & 135 \\ \hline
-%     n=190 & 64,784,887 & 68.555 & 24 & 137 \\ \hline
-%     n=200 & 67,988,416 & 71.945 & 28 & 142 \\ \hline
-%     n=210 & 71,168,737 & 75.311 & 27 & 152 \\ \hline
-%     n=220 & 74,346,258 & 78.673 & 28 & 152 \\ \hline
-%     n=230 & 77,512,643 & 82.024 & 33 & 158 \\ \hline
-%     n=240 & 80,662,688 & 85.357 & 34 & 165 \\ \hline
-%     n=250 & 83,816,500 & 88.695 & 36 & 170 \\ \hline
-%     n=260 & 86,935,408 & 91.995 & 39 & 171 \\ \hline
-%     n=270 & 90,072,723 & 95.315 & 41 & 176 \\ \hline
-%     n=280 & 93,213,031 & 98.638 & 41 & 183 \\ \hline
-%     n=290 & 96,311,780 & 101.917 & 43 & 182 \\ \hline
-%     n=300 & 99,428,033 & 105.215 & 43 & 190 \\ \hline
-%   \end{tabular}
-%   }
-% \end{table}
-%
+
+
+\begin{table}[h]
+  \centering
+  \caption{頂点数と重みの範囲に対する完全多項式時間近似スキームに基づいた解の格納方法の計算時間（単位：ms）の比較
+  （最適化目的の数：3，各目的関数間に相関なし），実験回数：約10万回}
+  {\small
+  \begin{tabular}{|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 解の数 & 改善前 & 改良後 \\ \hline
+    100	 & 6,121 & 	459 & 90 \\ \hline
+    200	 & 19,939 & 	1,804 & 	322 \\ \hline
+    300	 & 38,807 & 	4,881 & 	731 \\ \hline
+    400	 & 61,338 & 	11,687 & 	1,620 \\ \hline
+    500	 & 87,141 & 	22,727 & 	2,997 \\ \hline
+    600	 & 115,703 & 	39,786 & 	5,139 \\ \hline
+    700	 & 146,406 & 	61,968 & 	7,938 \\ \hline
+    800	 & 179,819 & 	90,555 & 	11,265 \\ \hline
+    900	 & 214,839 & 	126,755 & 	15,092 \\ \hline
+    1,000	 & 251,852	 & 172,615 & 	20,307 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{頂点数と重みの範囲に対するラベル付けアルゴリズムに基づいた解の格納方法の計算時間（単位：ms）の比較
+  （最適化目的の数：3，各目的関数間に相関なし），実験回数：60回}
+  {\small
+  \begin{tabular}{|c|c|c|} \hline
+    頂点数＝重みの範囲 & 改善前 & 改良後 \\ \hline
+    50 & 439 & 3 \\ \hline
+    100 & 1,654,873 & 28 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{頂点数と重みの範囲に対する探索順序に基づいた解の格納方法の計算時間（単位：ms）の比較
+  （最適化目的の数：3，各目的関数間に相関なし），実験回数：約10万回}
+  {\small
+  \begin{tabular}{|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 解の数 & 改善前 & 改良後 \\ \hline
+    100 & 	6,121 & 	90 & 	83 \\ \hline
+    200 & 	19,939 & 	322 & 	274 \\ \hline
+    300 & 	38,807  & 731 & 	565 \\ \hline
+    400 & 	61,338 & 	1,620 & 	1,117 \\ \hline
+    500 & 	87,141 & 	2,997 & 	1,938 \\ \hline
+    600 & 	115,703 & 	5,139 & 	3,135 \\ \hline
+    700 & 	146,406 & 	7,938 & 	4,577 \\ \hline
+    800 & 	179,819 & 	11,265 & 	6,457 \\ \hline
+    900 & 	214,839 & 	15,092 & 	8,465 \\ \hline
+    1,000 & 	251,852 & 	20,307 & 	11,766 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{頂点数と重みの範囲に対する探索順序に基づいた解の格納方法の削除される解の数の比較
+  （最適化目的の数：3，各目的関数間に相関なし），実験回数：約10万回}
+  {\small
+  \begin{tabular}{|c|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 解の数 & 従来研究 & 改善前 & 改良後 \\ \hline
+    100 & 	6,121 & 	5,136 & 	5,136 & 	2,606 \\ \hline
+    200 & 	19,939 & 	22,009 & 	22,009 & 	10,528 \\ \hline
+    300 & 	38,807 & 	49,320 & 	49,320 & 	22,814 \\ \hline
+    400 & 	61,338 & 	85,646 & 	85,646 & 	38,806 \\ \hline
+    500 & 	87,141 & 	130,495 & 	130,495 & 	58,133 \\ \hline
+    600 & 	115,703 & 	182,761 & 	182,761 & 	80,425 \\ \hline
+    700 & 	146,406 & 	242,159 & 	242,159 & 	105,387 \\ \hline
+    800 & 	179,819 & 	308,104 & 	308,104 & 	133,120 \\ \hline
+    900 & 	214,839 & 	380,748 & 	380,748 & 	162,784 \\ \hline
+    1,000 & 	251,852 & 	459,256 & 	459,256 & 	195,413 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{頂点数と重みの範囲に対する実行可能解の計算時間（単位：ms）の比較
+  （最適化目的の数：3，各目的関数間に相関なし），実験回数：3回}
+  {\small
+  \begin{tabular}{|c|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 解の数 & 従来研究 & 改善前 & 改良後 \\ \hline
+    100 &	6,319	& 170 &	33 &	28 \\ \hline
+    200 &	21,249 &	1,666 &	225 &	180 \\ \hline
+    300 &	43,742 &	5,383 &	625 &	561 \\ \hline
+    400 &	66,356 &	11,335 &	1,205 &	1,030 \\ \hline
+    500 &	92,661 &	20,369 &	2,465 &	1,766 \\ \hline
+    600 &	127,998 &	37,682 &	3,881 &	2,860 \\ \hline
+    700 &	154,392 &	62,498 &	5,860 &	3,879 \\ \hline
+    800 &	190,454 &	72,925 &	7,875 &	5,593 \\ \hline
+    900 &	236,023 &	109,416 &	11,270 &	8,112 \\ \hline
+    1,000 &	270,261 &	173,189 &	15,043 &	10,427 \\ \hline
+    1,100 &	277,007 &	192,805 &	21,598 &	13,824 \\ \hline
+    1,200 &	324,186 &	247,645 &	23,965 &	17,707 \\ \hline
+    1,300 &	366,179 &	199,785 &	34,085 &	21,578 \\ \hline
+    1,400 &	423,442 &	356,512 &	52,437 &	26,657 \\ \hline
+    1,500 &	428,851 &	409,573 &	47,912 &	32,219 \\ \hline
+    1,600 &	499,582 &	525,150 &	61,696 &	38,498 \\ \hline
+    1,700 &	531,096 &	648,257 &	70,175 &	43,645 \\ \hline
+    1,800 &	596,137 &	652,252 &	83,488 &	51,557 \\ \hline
+    1,900 &	641,731 &	1,076,189 &	92,975 &	60,735 \\ \hline
+    2,000 &	741,472 &	2,597,995 &	180,264 &	88,090 \\ \hline
+    3,000 &	1,215,694 &	6,936,107 &	266,882 &	205,562 \\ \hline
+    4,000 &	1,870,729 &	8,213,518 &	489,084 &	377,354 \\ \hline
+    5,000 &	2,512,844 &	12,034,818 &	1,593,567 &	730,709 \\ \hline
+    6,000 &	3,531,481 &	21,577,070 &	1,689,733 &	1,076,165 \\ \hline
+    7,000 &	4,041,990 &	28,203,255 &	2,193,079 &	1,659,099 \\ \hline
+    8,000 &	5,006,335 &	31,254,881 &	3,197,729 &	2,131,159 \\ \hline
+    9,000 &	5,944,410 &	57,888,144 &	3,834,144 &	2,573,077 \\ \hline
+    10,000 &	6,995,929 &	65,294,657 &	5,537,949 &	3,768,780 \\ \hline
+    11,000 &	8,055,357	& $\infty$ &	8,501,472 &	6,059,436 \\ \hline
+    12,000 &	9,332,482	& $\infty$ &	9,193,497 &	6,143,881 \\ \hline
+    13,000 &	10,604,845	& $\infty$ &	11,402,847 &	6,774,594 \\ \hline
+    14,000 &	11,418,667	& $\infty$ &	13,897,933 &	8,560,172 \\ \hline
+    15,000 &	12,244,607	& $\infty$ &	15,008,922 &	10,019,615 \\ \hline
+    16,000	& $\infty$	& $\infty$ & $\infty$ & $\infty$ \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{頂点に対する入力辺の相関係数ごとの計算時間（単位：ms）と削除回数の比較（頂点数：1000,
+  重みの幅：1000，最適化目的の数：3），実験回数：約2万回}
+  {\small
+  \begin{tabular}{|c|c|c|c|c|c|} \hline
+    相関係数 & 解の数 & 改善前計算時間 & 改善後計算時間 & 改善前削除数 & 改善後削除数 \\ \hline
+    0     & 246,955 & 20,506 & 13,478 & 447,440 & 186,749 \\ \hline
+    0.05  & 185,662 & 13,962 & 8,811, & 420,840 & 166,948 \\ \hline
+    0.1   & 161,191 & 13,487 & 8,492 & 315,199 & 140,244 \\ \hline
+    0.15  & 172,748 & 12,871 & 8,120 & 312,996 & 150,422 \\ \hline
+    0.2   & 161,141 & 12,189 & 7,669 & 324,362 & 143,351 \\ \hline
+    0.25  & 134,353 & 11,539 & 7,243 & 313,794 & 132,049 \\ \hline
+    0.3   & 145,781 & 10,981 & 6,854 & 332,715 & 128,478 \\ \hline
+    0.35  & 141,302 & 10,511 & 6,580 & 287,743 & 129,807 \\ \hline
+    0.4   & 151,405 & 10,130 & 6,346 & 288,121 & 123,322 \\ \hline
+    0.45  & 142,391 & 9,582  & 6,014 & 293,642 & 129,536 \\ \hline
+    0.5   & 132,419 & 9,293  & 5,865 & 267,527 & 108,954 \\ \hline
+    0.55  & 127,512 & 8,944  & 5,581 & 258,366 & 110,932 \\ \hline
+    0.6   & 118,846 & 8,410  & 5,360 & 292,424 & 123,085 \\ \hline
+    0.65  & 109,101 & 8,021  & 5,117 & 216,053 & 91,999 \\ \hline
+    0.7   & 122,610 & 7,430  & 4,952 & 239,031 & 96,521 \\ \hline
+    0.75  & 112,932 & 7,035  & 4,885 & 215,665 & 98,276 \\ \hline
+    0.8   & 103,793 & 6,480  & 5,120 & 187,216 & 93,555 \\ \hline
+    0.85  & 111,638 & 5,905  & 5,459 & 186,635 & 84,965 \\ \hline
+    0.9   & 91,323  & 5,304  & 5,866 & 156,423 & 73,575 \\ \hline
+    0.95  & 75,277  & 4,173  & 4,966 & 132,447 & 62,707 \\ \hline
+    1     & 55,699  & 1,930  & 2,066 & 87,051  & 42,773 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{頂点に対する出力辺の相関係数ごとの計算時間（単位：ms）と削除回数の比較（頂点数：1000,
+  重みの幅：1000，最適化目的の数：3），実験回数：約2万回}
+  {\small
+  \begin{tabular}{|c|c|c|c|c|c|} \hline
+    相関係数 & 解の数 & 改善前計算時間 & 改善後計算時間 & 改善前削除数 & 改善後削除数 \\ \hline
+    0 & 257,756 & 19,865 & 13,254 & 476,565 & 204,555 \\ \hline
+    0.05 & 180,432 & 13,794 & 8,846 & 372,821 & 155,101 \\ \hline
+    0.1 & 184,311 & 13,279 & 8,536 & 372,142 & 156,539 \\ \hline
+    0.15 & 173,748 & 12,653 & 8,126 & 341,195 & 153,053 \\ \hline
+    0.2 & 153,605 & 11,942 & 7,683 & 350,808 & 144,610 \\ \hline
+    0.25 & 162,542 & 11,424 & 7,296 & 339,908 & 138,337 \\ \hline
+    0.3 & 152,887 & 10,942 & 6,952 & 288,288 & 126,227 \\ \hline
+    0.35 & 146,081 & 11,297 & 7,213 & 309,543 & 134,043 \\ \hline
+    0.4 & 145,310 & 10,106 & 6,438 & 286,549 & 119,165 \\ \hline
+    0.45 & 130,655 & 9,598 & 6,157 & 263,506 & 109,500 \\ \hline
+    0.5 & 126,388 & 9,180 & 5,824 & 243,431 & 105,708 \\ \hline
+    0.55 & 131,804 & 8,775 & 5,621 & 251,082 & 111,571 \\ \hline
+    0.6 & 127,963 & 8,300 & 5,321 & 260,390 & 112,661 \\ \hline
+    0.65 & 135,237 & 7,892 & 5,122 & 267,342 & 110,063 \\ \hline
+    0.7 & 118,104 & 7,365 & 4,813 & 253,141 & 107,362 \\ \hline
+    0.75 & 127,453 & 6,842 & 4,630 & 217,825 & 96,583 \\ \hline
+    0.8 & 100,776 & 6,312 & 4,668 & 197,383 & 88,598 \\ \hline
+    0.85 & 99,316 & 5,781 & 5,048 & 182,147 & 85,528 \\ \hline
+    0.9 & 90,367 & 5,073 & 5,266 & 165,269 & 75,060 \\ \hline
+    0.95 & 78,995 & 4,056 & 4,695 & 125,484 & 63,460 \\ \hline
+    1 & 52,036 & 1,914 & 2,103 & 73,916 & 43,110 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+
+\begin{table}[h]
+  \centering
+  \caption{非負の頂点数と重みの範囲に対する負考慮解法ごとの計算時間（単位：ms）の比較（最適化目的の数：3，各目的関数間に相関なし），実験回数：3000回}
+  {\small
+  \begin{tabular}{|c|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 解の数 & 負の閉路を先に検出 & 探索途中で検出 & 得られた解を基に探索 \\ \hline
+    600 & 118,123 & 2,813 & 2,752 & 5,811 \\ \hline
+    700 & 150,623 & 4,289 & 4,255 & 9,209 \\ \hline
+    800 & 183,006 & 5,742 & 5,551 & 12,114 \\ \hline
+    900 & 215,938 & 7,766 & 7,564 & 16,631 \\ \hline
+    1,000 & 251,326 & 12,921 & 12,683 & 28,757 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{負の重みを含む（1つの目的関数に負の閉路が存在，すぐに閉路が見つかる）頂点数と重みの範囲に対する負考慮解法ごとの計算時間
+  （単位：ms）の比較（最適化目的の数：3，各目的関数間に相関なし），実験回数：3000回}
+  {\small
+  \begin{tabular}{|c|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 解の数 & 負の閉路を先に検出 & 探索途中で検出 & 得られた解を基に探索 \\ \hline
+    600 & 14,742 & 568 & 491 & 856 \\ \hline
+    700 & 17,706 & 798 & 683 & 1,196 \\ \hline
+    800 & 21,806 & 1,151 & 986 & 1,690 \\ \hline
+    900 & 24,442 & 1,466 & 1,186 & 2,217 \\ \hline
+    1,000 & 29,051 & 2,029 & 1,569 & 2,898 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+
+\begin{table}[h]
+  \centering
+  \caption{頂点数と重みの範囲に対するリストの工夫ごとの計算時間（単位：ms）の比較
+  （最適化目的の数：3，各目的関数間に相関なし），実験回数：4000回}
+  {\small
+  \begin{tabular}{|c|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 解の数 & 双方向循環リスト & ArrayList & 配列管理 \\ \hline
+    100 & 6,054 & 28 & 35 & 29 \\ \hline
+    200 & 20,630 & 201 & 318 & 205 \\ \hline
+    300 & 38,758 & 566 & 1,158 & 572 \\ \hline
+    400 & 63,646 & 1,161 & 2,773 & 1,176 \\ \hline
+    500 & 86,275 & 1,790 & 4,780 & 2,037 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{頂点数と重みの範囲に対する更新対象の工夫ごとの計算時間（単位：ms）の比較（
+  最適化目的の数：3，各目的関数間に相関なし），実験回数：2000回}
+  {\small
+  \begin{tabular}{|c|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 解の数 & 辺の終点を更新対象 & 辺の始点を更新対象 \\ \hline
+    100 & 6,054 & 28 & 51 \\ \hline
+    200 & 20,630 & 201 & 321 \\ \hline
+    300 & 38,758 & 566 & 825 \\ \hline
+    400 & 63,646 & 1,161 & 1,790 \\ \hline
+    500 & 86,275 & 1,790 & 2,914 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{頂点数ごとの計算時間（単位：ms）の比較（
+  重みの幅：1000，最適化目的の数：3，各目的関数間に相関なし），実験回数：約3000回}
+  {\small
+  \begin{tabular}{|c|c|c|c|} \hline
+    頂点数 & 改善前計算時間 & 改善後計算時間 & 従来計算時間 \\ \hline
+    100 & 197 & 168 & 5,726 \\ \hline
+    200 & 1,152 & 907 & 20,033 \\ \hline
+    300 & 3,756 & 2,982 & 39,113 \\ \hline
+    400 & 7,312 & 5,819 & 61,123 \\ \hline
+    500 & 11,227 & 7,456 & 85,744 \\ \hline
+    600 & 11,554 & 6,928 & 116,011 \\ \hline
+    700 & 12,901 & 8,515 & 144,736 \\ \hline
+    800 & 23,644 & 14,779 & 174,663 \\ \hline
+    900 & 22,201 & 14,093 & 213,478 \\ \hline
+    1,000 & 29,744 & 18,544 & 251,971 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{重みの範囲ごとの計算時間（単位：ms）の比較（
+  頂点数：1000，最適化目的の数：3，各目的関数間に相関なし），実験回数：約3000回}
+  {\small
+  \begin{tabular}{|c|c|c|c|} \hline
+    重みの範囲 & 改善前計算時間 & 改善後計算時間 & 従来計算時間 \\ \hline
+    100 & 46,677 & 28,502 & 208,974 \\ \hline
+    200 & 37,146 & 24,333 & 239,559 \\ \hline
+    300 & 30,315 & 19,921 & 248,892 \\ \hline
+    400 & 30,526 & 19,639 & 259,125 \\ \hline
+    500 & 28,976 & 19,166 & 254,776 \\ \hline
+    600 & 28,683 & 19,561 & 255,832 \\ \hline
+    700 & 28,175 & 19,157 & 253,396 \\ \hline
+    800 & 28,272 & 19,296 & 252,128 \\ \hline
+    900 & 27,813 & 19,190 & 252,658 \\ \hline
+    1,000 & 28,249 & 18,766 & 249,359 \\ \hline
+    1,100 & 27,392 & 	18,712 & 	248,251 \\ \hline
+    1,200 & 29,003 & 	19,437	 & 255,863 \\ \hline
+    1,300 & 27,351 & 	18,940 & 	251,286 \\ \hline
+    1,400 & 27,474 & 	18,787 & 	251,007 \\ \hline
+    1,500 & 28,001 & 	18,770 & 	249,709 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{最適化目的の数ごとの探索順序改良の計算時間（単位：ms）の比較（頂点数=重みの範囲=1000，各目的関数間に相関なし），実験回数：約1000回}
+  {\small
+  \begin{tabular}{|c|c|c|c|} \hline
+    最適化目的の数 & 解の数 & 改善前計算時間 & 改善後計算時間　\\ \hline
+    1 & 	1,000 & 	1,104 & 	2,516　\\ \hline
+    2 & 	29,764	 & 10,645 & 	9,972　\\ \hline
+    3 & 	253,189	 & 65,963 & 	45,505　\\ \hline
+    4 & 	1,253,387	 & 294,329	 & 133,776　\\ \hline
+    5 & 	4,096,826	 & 1,278,071	 & 713,449　\\ \hline
+    6 &   10,668,317    &	55,922,56 &	3,442,726 \\ \hline
+    7 &   22,916,959   &	21,252,854 &	11,532,789 \\ \hline
+    8 &   44,172,475   &	464,059,255 &	32,862,812 \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{従来研究に対する頂点数と重みの範囲ごとの計算時間（単位：ms）の比較（最適化目的の数：3，各目的関数間に相関なし），実験回数：60回}
+  {\small
+  \begin{tabular}{|c|c|c|c|} \hline
+    頂点数＝重みの範囲 & 拡張ダイクストラ & 完全多項式時間近似スキーム & ラベル付けアルゴリズム \\ \hline
+    50 & 1,617 & 439 & 18 \\ \hline
+    100 & 1,476,912 & 1,654,873 & 142 \\ \hline
+  \end{tabular}
+  }
+\end{table}
 
 
 \chapter*{謝辞}

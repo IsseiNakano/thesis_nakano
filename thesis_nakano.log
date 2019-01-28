@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_3) (preloaded format=platex 2018.4.10)  22 JAN 2019 17:21
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_3) (preloaded format=platex 2018.4.10)  28 JAN 2019 19:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -215,17 +215,17 @@ t/12 v[]; [] ; v[]\OMS/cmsy/m/n/12 g$
 [12
 
 ]
-Overfull \hbox (24.02098pt too wide) in paragraph at lines 434--438
-[]\JY1/mc/m/n/12 始点が $\OML/cmm/m/it/12 v$ \JY1/mc/m/n/12 ， 終点が $\OML/cmm
-/m/it/12 !$ \JY1/mc/m/n/12 である辺 $\OML/cmm/m/it/12 e$ \JY1/mc/m/n/12 の重み
-ベクトルを $[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 e[]; [] ; e[]\OT1/cmr/m/n/12
- )$
+Overfull \hbox (15.97476pt too wide) in paragraph at lines 441--445
+[]\JY1/mc/m/n/12 始点が $\OML/cmm/m/it/12 v$\JY1/mc/m/n/12 ， 終点が $\OML/cmm/
+m/it/12 !$ \JY1/mc/m/n/12 である辺 $\OML/cmm/m/it/12 e$ \JY1/mc/m/n/12 の重みベ
+クトルを $[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 e[]; [] ; e[]\OT1/cmr/m/n/12 )
+$
  []
 
 [13]
 File: fig/fig1.pdf Graphic file (type pdf)
  <fig/fig1.pdf> [14]
-Overfull \hbox (57.25584pt too wide) in paragraph at lines 549--553
+Overfull \hbox (67.45422pt too wide) in paragraph at lines 547--551
 []\JY1/mc/m/n/12 辺 $\OML/cmm/m/it/12 e$ \JY1/mc/m/n/12 の重みベクトルを $[] \O
 T1/cmr/m/n/12 = (\OML/cmm/m/it/12 e[]; [] ; e[]\OT1/cmr/m/n/12 )$ \JY1/mc/m/n/1
 2 とし ， $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ![]; l[]; [] ; l[]\OT1/cmr/m/n/12 
@@ -233,81 +233,91 @@ T1/cmr/m/n/12 = (\OML/cmm/m/it/12 e[]; [] ; e[]\OT1/cmr/m/n/12 )$ \JY1/mc/m/n/1
  []
 
 
-Overfull \hbox (4.03242pt too wide) in paragraph at lines 553--555
+Overfull \hbox (17.25484pt too wide) in paragraph at lines 551--553
 []\JY1/mc/m/n/12 以下の条件を満たすとき ， $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/
 12   \OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 [ f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  ![]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
  []
 
-[15]
-Overfull \hbox (12.64957pt too wide) in paragraph at lines 561--565
+
+Overfull \hbox (36.68329pt too wide) in paragraph at lines 559--563
 []\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ![]; l[]; [] ; l[]\O
 T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]$ \JY1/mc/m/n/12 に対し
 て $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ![]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$
  []
 
 
-Overfull \hbox (43.77829pt too wide) in paragraph at lines 561--565
+Overfull \hbox (69.01756pt too wide) in paragraph at lines 559--563
 \JY1/mc/m/n/12 が $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ![]; l[]; [] ; l[]\OT1/cmr
 /m/n/12 )$ \JY1/mc/m/n/12 を支配しているとき ， $\OML/cmm/m/it/12 L[] \OMS/cmsy
 /m/n/12   \OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/
 it/12 ![]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
  []
 
+[15]
 Missing character: There is no ^^c3 in font cmr12!
 Missing character: There is no ^^a9 in font cmr12!
 File: fig/fig2.pdf Graphic file (type pdf)
-<fig/fig2.pdf> [16] [17]
-Overfull \hbox (30.47978pt too wide) in paragraph at lines 647--650
+ <fig/fig2.pdf> [16]
+Overfull \hbox (47.94617pt too wide) in paragraph at lines 636--639
 []\JY1/mc/m/n/12 以下の条件を満たすとき ， $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/
 12   \OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 [ f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
- u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+ u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\JY1/mc/m/n/12 ，
  []
 
 
-Overfull \hbox (36.73769pt too wide) in paragraph at lines 656--660
+Overfull \hbox (61.97696pt too wide) in paragraph at lines 645--649
 []\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\O
 T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]$ \JY1/mc/m/n/12 に対し
 て $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$
  []
 
 
-Overfull \hbox (48.38919pt too wide) in paragraph at lines 656--660
+Overfull \hbox (73.62846pt too wide) in paragraph at lines 645--649
 \JY1/mc/m/n/12 が $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr
 /m/n/12 )$ \JY1/mc/m/n/12 を支配しているとき ， $\OML/cmm/m/it/12 L[] \OMS/cmsy
 /m/n/12   \OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/
 it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
  []
 
-[18]
+[17]
 第 4 章
-[19
+[18
 
-] [20] [21] [22] [23] [24]
+] [19] [20] [21] [22] [23] [24]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 889.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 894.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 889.
- [25] [26]
-Overfull \hbox (19.63707pt too wide) in paragraph at lines 937--940
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 894.
+ [25]
+Overfull \hbox (37.10345pt too wide) in paragraph at lines 933--936
 []\JY1/mc/m/n/12 以下の条件を満たすとき ， $\OML/cmm/m/it/12 L \OMS/cmsy/m/n/12
    \OML/cmm/m/it/12 L \OMS/cmsy/m/n/12 [ f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]
-; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\JY1/mc/m/n/12 ，
  []
 
 
-Overfull \hbox (4.13542pt too wide) in paragraph at lines 946--950
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$ \JY1/mc/
-m/n/12 が $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 
-)$ \JY1/mc/m/n/12 を支配しているとき ， $\OML/cmm/m/it/12 L \OMS/cmsy/m/n/12  
+Overfull \hbox (2.3973pt too wide) in paragraph at lines 937--939
+[]\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L; u \OT1/cmr/m/n/12 = \OML
+/cmm/m/it/12 u[]$ \JY1/mc/m/n/12 に $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]
+; [] ; l[]\OT1/cmr/m/n/12 )$
  []
 
-[27]
+
+Overfull \hbox (2.3973pt too wide) in paragraph at lines 939--941
+[]\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L; u \OT1/cmr/m/n/12 = \OML
+/cmm/m/it/12 u[]$ \JY1/mc/m/n/12 と $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]
+; [] ; l[]\OT1/cmr/m/n/12 )$
+ []
+
+[26]
 File: fig/fig3.pdf Graphic file (type pdf)
- <fig/fig3.pdf>
+ <fig/fig3.pdf> [27]
 File: fig/fig4.pdf Graphic file (type pdf)
- <fig/fig4.pdf> [28] [29]
-Overfull \hbox (21.67204pt too wide) in paragraph at lines 1060--1064
+ <fig/fig4.pdf> [28]
+Overfull \hbox (31.87042pt too wide) in paragraph at lines 1056--1060
 []\JY1/mc/m/n/12 辺 $\OML/cmm/m/it/12 e$ \JY1/mc/m/n/12 の重みベクトルを $[] \O
 T1/cmr/m/n/12 = (\OML/cmm/m/it/12 e[]; [] ; e[]\OT1/cmr/m/n/12 )$ \JY1/mc/m/n/1
 2 とし ， $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 
@@ -315,99 +325,201 @@ T1/cmr/m/n/12 = (\OML/cmm/m/it/12 e[]; [] ; e[]\OT1/cmr/m/n/12 )$ \JY1/mc/m/n/1
  []
 
 
-Overfull \hbox (12.00235pt too wide) in paragraph at lines 1072--1078
+Overfull \hbox (35.012pt too wide) in paragraph at lines 1068--1074
+\JY1/mc/m/n/12 が $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr
+/m/n/12 )$ \JY1/mc/m/n/12 を支配しているとき $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/
+n/12   \OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+ []
+
+
+Overfull \hbox (47.08266pt too wide) in paragraph at lines 1068--1074
 \JY1/mc/m/n/12 とする ． $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\
-OT1/cmr/m/n/12 )$ \JY1/mc/m/n/12 の前の解が $\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 
-(\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 )$ \JY1/mc/m/n/12 の場合 ， $\OT1/cmr/m/n/
-12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$
+OT1/cmr/m/n/12 )$ \JY1/mc/m/n/12 の前の経路が $\OML/cmm/m/it/12 M\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 )$ \JY1/mc/m/n/12 の場合 ， $\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$
  []
 
-[30]
+[29]
 File: fig/fig6.pdf Graphic file (type pdf)
- <fig/fig6.pdf> [31]
+ <fig/fig6.pdf> [30]
 File: fig/fig8.pdf Graphic file (type pdf)
- <fig/fig8.pdf> [32]
+ <fig/fig8.pdf> [31]
 File: fig/fig7.pdf Graphic file (type pdf)
- <fig/fig7.pdf> [33]
-Overfull \hbox (21.67204pt too wide) in paragraph at lines 1200--1204
+ <fig/fig7.pdf> [32]
+Overfull \hbox (31.87042pt too wide) in paragraph at lines 1193--1197
 []\JY1/mc/m/n/12 辺 $\OML/cmm/m/it/12 e$ \JY1/mc/m/n/12 の重みベクトルを $[] \O
 T1/cmr/m/n/12 = (\OML/cmm/m/it/12 e[]; [] ; e[]\OT1/cmr/m/n/12 )$ \JY1/mc/m/n/1
 2 とし ， $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 
 ) \OMS/cmsy/m/n/12  
  []
 
-[34]
-Overfull \hbox (6.39015pt too wide) in paragraph at lines 1212--1216
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$ \JY1/mc/
-m/n/12 を支配しているとき $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12   \OML/cmm/m/i
-t/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l
-[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+
+Overfull \hbox (14.72684pt too wide) in paragraph at lines 1200--1202
+[]\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 f\OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 [ \OM
+L/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 L[]\OMS/cmsy/m/n/12 g$ \J
+Y1/mc/m/n/12 に $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m
+/n/12 )$
  []
 
 
-Overfull \hbox (5.79756pt too wide) in paragraph at lines 1216--1220
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$ \JY1/mc/
-m/n/12 を支配しているとき $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12   \OML/cmm/m/i
-t/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l
-[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+Overfull \hbox (14.72684pt too wide) in paragraph at lines 1202--1204
+[]\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 f\OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 [ \OM
+L/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 L[]\OMS/cmsy/m/n/12 g$ \J
+Y1/mc/m/n/12 と $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m
+/n/12 )$
  []
 
 
-Overfull \hbox (5.40404pt too wide) in paragraph at lines 1220--1224
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$ \JY1/mc/
-m/n/12 を支配しているとき $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12   \OML/cmm/m/i
-t/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l
-[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+Overfull \hbox (2.31477pt too wide) in paragraph at lines 1205--1209
+[]\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]$ \JY1/mc/m/n/12 に対し
+て $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$
  []
 
-[35] [36] [37] [38]
+
+Overfull \hbox (44.58154pt too wide) in paragraph at lines 1205--1209
+\JY1/mc/m/n/12 が $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr
+/m/n/12 )$ \JY1/mc/m/n/12 を支配しているとき $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/
+n/12   \OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+ []
+
+
+Overfull \hbox (2.01848pt too wide) in paragraph at lines 1209--1213
+[]\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]$ \JY1/mc/m/n/12 に対し
+て $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$
+ []
+
+
+Overfull \hbox (43.98895pt too wide) in paragraph at lines 1209--1213
+\JY1/mc/m/n/12 が $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr
+/m/n/12 )$ \JY1/mc/m/n/12 を支配しているとき $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/
+n/12   \OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+ []
+
+
+Overfull \hbox (1.82172pt too wide) in paragraph at lines 1213--1217
+[]\JY1/mc/m/n/12 任意の $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]$ \JY1/mc/m/n/12 に対し
+て $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )$
+ []
+
+
+Overfull \hbox (43.59543pt too wide) in paragraph at lines 1213--1217
+\JY1/mc/m/n/12 が $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]; l[]; [] ; l[]\OT1/cmr
+/m/n/12 )$ \JY1/mc/m/n/12 を支配しているとき $\OML/cmm/m/it/12 L[] \OMS/cmsy/m/
+n/12   \OML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 n f\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 u[]; l[]; [] ; l[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
+ []
+
+[33] [34] [35] [36] [37]
 File: fig/fig9.pdf Graphic file (type pdf)
- <fig/fig9.pdf> [39]
+ <fig/fig9.pdf> [38]
 File: fig/fig10.pdf Graphic file (type pdf)
- <fig/fig10.pdf> [40]
+ <fig/fig10.pdf> [39]
 File: fig/fig12.pdf Graphic file (type pdf)
- <fig/fig12.pdf>
-[41]
+
+<fig/fig12.pdf> [40]
 File: fig/fig11.pdf Graphic file (type pdf)
- <fig/fig11.pdf> [42] [43]
+ <fig/fig11.pdf> [41] [42]
 File: fig/fig13.pdf Graphic file (type pdf)
- <fig/fig13.pdf>
+ <fig/fig13.pdf> [43]
 File: fig/fig14.pdf Graphic file (type pdf)
- <fig/fig14.pdf> [44] [45]
+
+<fig/fig14.pdf> [44]
 File: fig/fig15.pdf Graphic file (type pdf)
-
-<fig/fig15.pdf> [46]
+ <fig/fig15.pdf> [45]
 File: fig/fig18.pdf Graphic file (type pdf)
- <fig/fig18.pdf> [47] [48] [49] [50]
+ <fig/fig18.pdf> [46] [47] [48]
+[49]
 第 5 章
-[51
+[50
 
-] (./thesis_nakano.bbl [52]
+] (./thesis_nakano.bbl [51]
 Missing character: There is no ^^c3 in font cmr12!
 Missing character: There is no ^^a3 in font cmr12!
 Missing character: There is no ^^e2 in font cmr12!
 Missing character: There is no ^^80 in font cmr12!
 Missing character: There is no ^^93 in font cmr12!
-) [53
+) [52
 
 ]
 付 録 A  
-[54
 
-] [55
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (9.41655pt too wide) in paragraph at lines 1999--2008
+ [][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (5.1336pt too wide) in paragraph at lines 2015--2024
+ [][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (24.74237pt too wide) in paragraph at lines 2128--2134
+ [][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[53
+
+] [54] [55] [56] [57] [58] [59] [60
 
 ]
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
 
 
-[56] (./thesis_nakano.aux) ) 
+[61] (./thesis_nakano.aux) ) 
 Here is how much of TeX's memory you used:
- 1545 strings out of 493653
- 18487 string characters out of 6150338
- 88630 words of memory out of 5000000
- 5125 multiletter control sequences out of 15000+600000
- 21556 words of font info for 86 fonts, out of 8000000 for 9000
+ 1550 strings out of 493653
+ 18571 string characters out of 6150338
+ 144630 words of memory out of 5000000
+ 5130 multiletter control sequences out of 15000+600000
+ 22804 words of font info for 91 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,15n,24p,244b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,15n,24p,316b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis_nakano.dvi (57 pages, 190924 bytes).
+Output written on thesis_nakano.dvi (62 pages, 230524 bytes).
